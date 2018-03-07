@@ -1,11 +1,10 @@
-# p1-website-search-jobs-base
 # UNIVERSIDAD NACIONAL DE COSTA RICA
-## Escuela de Informática
-## Project #1 (Search Tech Jobs from GitHub API)
+**Escuela de Informática**
 
-### EIF506 - Diseño de sitios web
-### Profesor: Maikol Guzmán Alán
+**Project #1 (Search Tech Jobs from GitHub API)**
 
+**EIF506 - Diseño de sitios web**
+**Profesor: Maikol Guzmán Alán**
 
 **VALOR: 15%**
 
