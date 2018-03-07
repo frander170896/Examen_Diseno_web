@@ -1,11 +1,17 @@
 # p1-website-search-jobs-base
-Project #1 (Search Tech Jobs from GitHub API)
+# UNIVERSIDAD NACIONAL DE COSTA RICA
+## Escuela de Informática
+## Project #1 (Search Tech Jobs from GitHub API)
+
+### EIF506 - Diseño de sitios web
+### Profesor: Maikol Guzmán Alán
+
 
 **VALOR: 15%**
 
 Utilizando el API de GitHub: [Jobs GitHub API](https://jobs.github.com/api)
 
-Desarrollar un sitio web que cumpla con TODOS los temas vistos en clase:
+### Contenidos a evaluar:
 
 - Wireframes del proyecto
 - Definición e implementación de **mínimo 5 elementos de UX** 
