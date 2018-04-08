@@ -1,16 +1,20 @@
-import React,{Component} from 'react';
-import Footer from './Componentes/footer';
+import React, { Component } from 'react';
+
 import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
 //import {container} from 'react-bootstrap';
 
 
-class Index extends Component{
+import Footer from './Componentes/Footer';
+import Header from './Componentes/Header';
 
-  render(){
+class Index extends Component {
+
+  render() {
     return (
       <div className="container text-center text-md-left">
-        <Footer/>
+        <Header />
+        <Footer />
       </div>
     );
   }
