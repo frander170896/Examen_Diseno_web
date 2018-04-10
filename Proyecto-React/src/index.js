@@ -1,27 +1,14 @@
-import React, { Component } from 'react';
+// Dependencies
+import React from 'react';
+import { render } from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-import ReactDOM from 'react-dom';
-import registerServiceWorker from './registerServiceWorker';
-//import {container} from 'react-bootstrap';
+// Routes
+import AppRoutes from './routes';
 
-
-import Footer from './Componentes/Footer';
-import Header from './Componentes/Header';
-
-class Index extends Component {
-
-  render() {
-    return (
-      <div className="container text-center text-md-left">
-        <Header />
-        <Footer />
-      </div>
-    );
-  }
-
-}
-
-
-ReactDOM.render(<Index />, document.getElementById('root'));
-registerServiceWorker();
-
+render(
+    <Router>
+      <AppRoutes />
+    </Router>,
+  document.getElementById('root')
+);

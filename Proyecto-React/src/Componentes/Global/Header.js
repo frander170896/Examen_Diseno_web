@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
-import '../css/footer.css';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import './css/footer.css';
 
-import banner from "../images/banner-jobs3.jpg";
-import user from "../icons/usuario.png";
+import banner from "./images/banner-jobs3.jpg";
+import user from "./icons/usuario.png";
 class Header extends Component {
+    static propTypes = {
+    title: PropTypes.string.isRequired,
+    items: PropTypes.array.isRequired
+  };
     render() {
+        const { title, items } = this.props;
         return (
             <div>
                 <nav class="navbar navbar-expand-sm navbar-light bg-light">
@@ -51,15 +58,9 @@ class Header extends Component {
                 <div class="">
                     <nav>
                         <ul class="nav justify-content-end">
-                            <li class="nav-item">
-                                <a class="btn btn-link" href="index.html">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="btn btn-link" href="about.html">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="btn btn-link" href="contact-us.html">Contact Us</a>
-                            </li>
+                        {items && items.map(
+                                (item, key) => <li className='nav-item' key={key}><Link className='btn btn-link' to={item.url}>{item.title}</Link></li>
+                                )}
 
                         </ul>
                     </nav>
