@@ -7,6 +7,7 @@ import App from './Componentes/App';
 import About from './Componentes/About';
 import Contact from './Componentes/Contact';
 import Home from './Componentes/Home';
+import Search from './Componentes/Search_Job';
 
 
 const AppRoutes = () =>
@@ -15,6 +16,7 @@ const AppRoutes = () =>
       <Route exact path="/about" component={About} />
       <Route exact path="/contact" component={Contact} />
       <Route exact path="/" component={Home} />
+      <Route exact path="/search" component={Search} />
     </Switch>
   </App>;
 

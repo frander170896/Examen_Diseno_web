@@ -5,6 +5,7 @@ import './css/footer.css';
 
 import banner from "./images/banner-jobs3.jpg";
 import user from "./icons/usuario.png";
+
 class Header extends Component {
     static propTypes = {
     title: PropTypes.string.isRequired,
@@ -14,50 +15,50 @@ class Header extends Component {
         const { title, items } = this.props;
         return (
             <div>
-                <nav class="navbar navbar-expand-sm navbar-light bg-light">
-                    <a class="navbar-brand" href="#">JOB SEARCH</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                <nav className="navbar navbar-expand-sm navbar-light bg-light">
+                    <a className="navbar-brand" href="#">JOB SEARCH</a>
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                        <span className="navbar-toggler-icon"></span>
                     </button>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Home
-                        <span class="sr-only">(current)</span>
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul className="navbar-nav mr-auto">
+                            <li className="nav-item active">
+                                <a className="nav-link" href="#">Home
+                        <span className="sr-only">(current)</span>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Link</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">
                                     Dropdown
                     </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Something else here</a>
+                                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a className="dropdown-item" href="#">Action</a>
+                                    <a className="dropdown-item" href="#">Another action</a>
+                                    <div className="dropdown-divider"></div>
+                                    <a className="dropdown-item" href="#">Something else here</a>
                                 </div>
                             </li>
 
                         </ul>
 
-                        <a href="#" id="navbar-static-login" class="nav-link waves-effect waves-light">
-                            <span class="clearfix d-none d-sm-inline-block">Log In</span>
-                            <img src={user}class="img-thumbnail imgheader" alt="login" />
+                        <a href="#" id="navbar-static-login" className="nav-link waves-effect waves-light">
+                            <span className="clearfix d-none d-sm-inline-block">Log In</span>
+                            <img src={user}className="img-thumbnail imgheader" alt="login" />
                         </a>
                     </div>
                 </nav>
-                <div class="row mt-1">
-                    <img src={banner} class="img-thumbnail" id="imgheader" alt="header" />
+                <div className="row mt-1">
+                    <img src={banner} className="img-thumbnail" id="imgheader" alt="header" />
                 </div>
-                <div class="">
+                <div className="">
                     <nav>
-                        <ul class="nav justify-content-end">
+                        <ul className="nav justify-content-end">
                         {items && items.map(
                                 (item, key) => <li className='nav-item' key={key}><Link className='btn btn-link' to={item.url}>{item.title}</Link></li>
                                 )}

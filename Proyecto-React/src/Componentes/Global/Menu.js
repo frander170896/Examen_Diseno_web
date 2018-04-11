@@ -10,5 +10,10 @@ export default [
   {
     title: 'Contact Us',
     url: '/contact'
+  },
+  {
+    title: 'Search Job',
+    url: '/search'
   }
+  
 ];
