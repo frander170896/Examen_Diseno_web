@@ -16,7 +16,11 @@ class InputDate extends Component{
 class CheckBox extends Component{
     render(){
         return (
-          <div></div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input"/>
+                <label class="custom-control-label" for="customCheck1">{this.props.option}</label>
+            </div>
+            
         );
     }
 }
