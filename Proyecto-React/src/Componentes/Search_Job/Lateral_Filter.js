@@ -16,7 +16,7 @@ class InputDate extends Component{
 class CheckBox extends Component{
     render(){
         return (
-          
+          <div></div>
         );
     }
 }
