@@ -1,0 +1,11 @@
+Filtro lateral
+-Fecha de publicación
+-ubicación
+-tipo( medio tiempo, tiempo completo)
+-Empresa
+
+Filtro horizontal
+
+-Titulo : nombre de la profesion 
+-tipo( medio tiempo, tiempo completo)
+
