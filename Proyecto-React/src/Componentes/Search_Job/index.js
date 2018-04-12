@@ -9,7 +9,7 @@ import JobItem from './JobItem.js';
 
         render(){
             return (
-                <div className="container-fluid">
+                <div className="container">
                     <div className="row search">
                        
                     </div>
@@ -18,7 +18,12 @@ import JobItem from './JobItem.js';
                              <LateralFilter></LateralFilter>
                         </div>
                         <div className="col-ms-12 col-md-9 col-lg-9" >
-                            <JobItem jobtitle={'Titulo'} job_description='Requires experience, minimum 30 year working on full time'/>
+                            <JobItem jobtitle={'SENIOR JAVA DEVELOPER'} job_description='Requires experience, minimum 30 year working on full time'
+                            company_url={'http://www.google.com'} 
+                            company_logo={"https://9to5mac.files.wordpress.com/2018/02/logo.jpg?quality=82&strip=all&w=1500"}
+                            job_type={'Full time'}
+                            company_description='Description: We are improving...'
+                            />
                         </div>
                     </div>
                 </div>

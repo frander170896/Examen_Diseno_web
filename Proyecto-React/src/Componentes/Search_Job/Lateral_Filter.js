@@ -45,8 +45,8 @@ class Select extends Component{
         return (
             <div>
                 <label>{this.props.Lnombre}</label>
-                <select class="custom-select" id="inputGroupSelect01">
-                { items && items.map((item) =><SelectOption value={item.value} text={item.text}></SelectOption>)}
+                <select className="custom-select" >
+                { items && items.map((item,key) =><SelectOption key={key} value={item.value} text={item.text}></SelectOption>)}
                 </select>
             </div>
         );
@@ -55,9 +55,9 @@ class Select extends Component{
 class OpcionesRadio extends Component{
     render(){
         return (// seria bueno agregarle acciones a las opciones para que filteren o para que llenen los otros filtros
-            <div class="custom-control custom-radio">
-                <input type="radio" class="custom-control-input"/>
-                <label class="custom-control-label" for="customRadio1">{this.props.text}</label>
+            <div className="custom-control custom-radio">
+                <input type="radio" id={this.props.value} name="customRadio" className="custom-control-input"/>
+                <label className="custom-control-label" >{this.props.text}</label>
             </div>
         );
     }
@@ -67,15 +67,12 @@ class Radio extends Component{
         const items = this.props.values;
         return (
             <div>
-                <label>Tipo Horario</label>
-                { items && items.map((item) =><OpcionesRadio text={item.text}></OpcionesRadio>)}
+                <label>{this.props.Lnombre}</label>
+                { items && items.map((item,key) =><OpcionesRadio key={key} value={item.value} text={item.text}></OpcionesRadio>)}
             </div>
         );
     }
-}
-
-
-   
+}   
 class LateralFilter extends Component{
     
     render(){
@@ -84,9 +81,10 @@ class LateralFilter extends Component{
                <InputDate Lnombre="Fecha Publicación"></InputDate>
                <Select Lnombre="Empresa" values={jsonPrueba}></Select>
                <Select Lnombre="Ubicación" values={jsonPrueba}></Select>
-               <Radio values={jsonPrueba}></Radio>
+               <Radio Lnombre="Tipo Horario" values={jsonPrueba}></Radio>
+               
                <input type="submit" value="Filtrar" className="btn btn-primary"></input> 
-
+            
            </form>
         );
     }
