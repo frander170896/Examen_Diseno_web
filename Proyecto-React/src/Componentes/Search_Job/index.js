@@ -17,7 +17,7 @@ import JobItem from './JobItem.js';
                         <div className="col-ms-12 col-md-3 col-lg-3" >
                              <LateralFilter></LateralFilter>
                         </div>
-                        <div className="col-ms-12 col-md-4 col-lg-4" >
+                        <div className="col-ms-12 col-md-9 col-lg-9" >
                             <JobItem jobtitle={'Titulo'} job_description='Requires experience, minimum 30 year working on full time'/>
                         </div>
                     </div>
