@@ -7,18 +7,18 @@ class JobList extends Component {
         this.state = {
             jobs:this.props.job_list
         }
+      
     }
+    
     render() {
         return (
-
-            this.state.jobs.map((job) =>
+            
+            this.state.jobs.map((job) => { 
                 <JobItem jobtitle={job.title}
-                    job_description={job.job_description}
-                    company_url={job.company_url}
-                    company_logo={job.company_logo}
-                    job_type={job.job_type}
-                    company_description={job.company_description}
-                />
+                    job_description={job.description} company_url={job.company_url}
+                    company_logo={job.company_logo} job_type= {job.type} 
+                    company_description={job.company_description} >
+                </JobItem>}
             )
 
         )

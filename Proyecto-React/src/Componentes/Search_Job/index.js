@@ -1,16 +1,39 @@
 import React, { Component } from 'react';
 import LateralFilter from './Lateral_Filter';
 import JobList from './JobList.js';
-import { get_Jobs } from './Jobs.js';
+import axios from 'axios';
 
 class Search extends Component {
     constructor(props) {
         super(props);
         this.state  = {
-            Jobs: get_Jobs()
+            Jobs: 0
         }
+        this.get_Jobs();
+        console.log(this.get_Jobs());
     }
-
+    get_Jobs() {
+        var datos = [];
+        axios.get('https://jobs.github.com/positions.json')
+        .then(res => this.setState({ Jobs: res.data }))
+           /* .then(function (response) {
+                datos = response.data;
+                //console.log(datos);
+                /*console.log(datos); //Datos de la respuesta
+                console.log(response.status); //Estatus
+                console.log(response.statusText); //Mensaje del estatus
+                console.log(response.headers); // Encabezados
+                return datos;
+            })*/
+        .catch(function (error) {
+            /*console.log(error.response); //Objeto respuesta
+            console.log(error.response.data); // Respuesta del servidor
+            console.log(error.response.status); //Código de error
+            console.log(error.response.statusText); //Mensaje del error*/
+        });
+        
+        
+    }
    /* get_jobs() {
 
         const posts = [
@@ -41,7 +64,7 @@ class Search extends Component {
                         <LateralFilter></LateralFilter>
                     </div>
                     <div className="col-ms-12 col-md-9 col-lg-9" >
-                        <JobList job_list={this.state.jobs} />
+                        {/*<JobList job_list={this.state.jobs} />*/}
                     </div>
                 </div>
             </div>
