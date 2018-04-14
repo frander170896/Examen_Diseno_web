@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import LateralFilter from './Lateral_Filter';
 import JobList from './JobList.js';
+import { get_Jobs } from './Jobs.js';
 
 class Search extends Component {
     constructor(props) {
         super(props);
+        this.state  = {
+            Jobs: get_Jobs()
+        }
     }
 
-    get_jobs() {
+   /* get_jobs() {
 
         const posts = [
             { jobtitle: 'SENIOR JAVA DEVELOPER', title: 'Hello World', content: 'Welcome to learning React!' },
@@ -20,10 +24,10 @@ class Search extends Component {
                             job_type={'Full time'}
                             company_description='Description: We are improving...'
                             />
-        */
+        
 
         return posts;
-    }
+}*/
 
     render() {
         return (
@@ -37,7 +41,7 @@ class Search extends Component {
                         <LateralFilter></LateralFilter>
                     </div>
                     <div className="col-ms-12 col-md-9 col-lg-9" >
-                        <JobList job_list={this.get_jobs()} />
+                        <JobList job_list={this.state.jobs} />
                     </div>
                 </div>
             </div>
