@@ -7,23 +7,16 @@ class JobList extends Component {
         this.state = {
             jobs:this.props.job_list
         }
-      
+      alert("GERSON ES EL CULPABLE"+this.state.jobs[0].title);
     }
     
     render() {
         return (
-            
-            this.state.jobs.map((job) => { 
-                <JobItem jobtitle={job.title}
-                    job_description={job.description} company_url={job.company_url}
-                    company_logo={job.company_logo} job_type= {job.type} 
-                    company_description={job.company_description} >
-                </JobItem>}
-            )
+            this.state.jobs.map(elemento => <li key={elemento.id}>{elemento.title}</li>)
+           
 
         )
     }
 
 }
-
 export default JobList;
