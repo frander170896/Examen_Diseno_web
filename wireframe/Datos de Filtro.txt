@@ -3,6 +3,7 @@ Filtro lateral
 -ubicación
 -tipo( medio tiempo, tiempo completo)
 -Empresa
+-
 
 Filtro horizontal
 

@@ -68,7 +68,8 @@ class Radio extends Component{
         return (
             <div>
                 <label>{this.props.Lnombre}</label>
-                { items && items.map((item,key) =><OpcionesRadio key={key} value={item.value} text={item.text}></OpcionesRadio>)}
+                <OpcionesRadio text={'Full Time'}></OpcionesRadio>
+                <OpcionesRadio text={'Middle Time'}></OpcionesRadio>
             </div>
         );
     }
