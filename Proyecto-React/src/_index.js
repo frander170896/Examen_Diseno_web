@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
 //import {container} from 'react-bootstrap';
 
-
 import Header from './Componentes/Header';
 import Footer from './Componentes/Footer';
 
@@ -21,7 +20,5 @@ class Index extends Component {
 
 }
 
-
 ReactDOM.render(<Index />, document.getElementById('root'));
 registerServiceWorker();
-

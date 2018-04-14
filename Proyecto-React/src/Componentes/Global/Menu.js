@@ -14,6 +14,10 @@ export default [
   {
     title: 'Search Job',
     url: '/search'
+  },
+  {
+    title: 'Register',
+    url: '/register'
   }
   
 ];
