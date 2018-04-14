@@ -8,8 +8,7 @@ import About from './Componentes/About';
 import Contact from './Componentes/Contact';
 import Home from './Componentes/Home';
 import Search from './Componentes/Search_Job';
-//import Register from './Componentes/Register';
-
+import Register from './Componentes/Register';
 
 const AppRoutes = () =>
   <App>
@@ -18,7 +17,7 @@ const AppRoutes = () =>
       <Route exact path="/about" component={About} />
       <Route exact path="/contact" component={Contact} />
       <Route exact path="/search" component={Search} />
-      {/*<Route exact path="/register" component={Register} />*/}
+      <Route exact path="/register" component={Register} />
     </Switch>
   </App>;
 
