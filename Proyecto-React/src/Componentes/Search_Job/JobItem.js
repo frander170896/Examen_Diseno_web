@@ -20,6 +20,16 @@ class ApplyLink extends Component {
     }
 }
 
+class Card extends Component {
+    render() {
+        return (
+            <a className='active btn btn-link' href={this.props.company_url}>
+                {this.props.action_name}
+            </a>
+        );
+    }
+}
+
 
 class JobItem extends Component {
     constructor(props) {
@@ -30,8 +40,7 @@ class JobItem extends Component {
             company_logo: "../Global/icons/reunion.png",
             company_url: 'http://www.google.com',
             job_type:'Full time',
-            company_description:'We are improving'
-            
+            company_description:'We are improving'            
         };
     }
   
