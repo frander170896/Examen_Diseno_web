@@ -16,11 +16,14 @@ class InputDate extends Component {
 class SelectOptionUb extends Component {
     constructor(props) {
         super(props);
-        this.handlerOnChange=this.handlerOnChange.bind(this);
+        this.handlerOnChange = this.handlerOnChange.bind(this);
+
     }
     handlerOnChange(item) {
         var mpadre = this.props.mpadre;
-        mpadre(item);
+        var referencia = this.props.referencia;
+        mpadre(item, referencia);
+        // console.log(referencia);
     }
     render() {
         return (
@@ -78,11 +81,13 @@ class SelectUbicacion extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            datos: this.eliminaDuplicadosUbicacion(this.props.values),
-            empresas:[],
-            todos_trabajos:this.props.values
+            empresas: [],
+            datos: this.eliminaDuplicadosUbicacion(this.props.values),           
+            todos_trabajos: this.props.values
         }
-        this.handlerOnChange=this.handlerOnChange.bind(this);
+        this.handlerOnChange = this.handlerOnChange.bind(this);
+        this.eliminaDuplicadosUbicacion=this.eliminaDuplicadosUbicacion.bind(this);
+
     }
     contains = (a, obj) => {
         var i = a.length;
@@ -128,12 +133,14 @@ class SelectUbicacion extends Component {
         return resultado;
     }
 
-    handlerOnChange(item) {
-        var cfiltradas = this.filtrarCiudad(this.state.todos_trabajos, item);
-        this.setState(() => {
-            empresas = this.eliminaDuplicadosUbicacion(cfiltradas);
+    handlerOnChange(item, referencia) {
+       
+        const cfiltradas = referencia.filtrarCiudad(referencia.state.todos_trabajos, item);
+        referencia.setState({
+            empresas : referencia.eliminaDuplicadosUbicacion(cfiltradas)
         });
-       // console.log("Dato recibido from child: " + item);
+
+        //console.log("Data from child: " +referencia.state.empresas);
     }
     render() {
         return (
@@ -145,10 +152,11 @@ class SelectUbicacion extends Component {
                             value={item.id}
                             text={item.location}
                             mpadre={this.handlerOnChange}
+                            referencia={this}
                         >
                         </SelectOptionUb>)}
                 </select>
-               {this.state.empresas?<SelectEmpresa Lnombre="Empresa" values={this.state.empresas}></SelectEmpresa> :''} 
+                {this.state.empresas ? <SelectEmpresa Lnombre="Empresa" values={this.state.empresas}></SelectEmpresa> : ''}
             </div>
         );
     }
