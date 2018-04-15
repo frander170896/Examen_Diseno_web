@@ -26,7 +26,12 @@ class Register extends Component {
                             </label>
                         </div>
                         <div className="input-group">
-                            <input className="form-control" type="text" placeholder="Full Name"/>
+                            <div class='input-group date' id='datetimepicker10'>
+                                <input type='text' class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="fa fa-user"></span>
+                                </span>
+                            </div>
                         </div>
                         <div className="input-group">
                             <input className="form-control" type="text" placeholder="Email"/>
