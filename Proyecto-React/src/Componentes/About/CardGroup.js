@@ -58,35 +58,35 @@ class CardGroup extends Component {
     //frander170896
     axios.get('https://api.github.com/users/marcoc22')
       .then(function (response) {
-        console.log(response.data);
+      
         self.setState({ marco: response.data })
       }).catch(function (res) {
 
       });
     axios.get('https://api.github.com/users/NAchoAvalos')
       .then(function (response) {
-        console.log(response.data);
+       
         self.setState({ nacho: response.data })
       }).catch(function (res) {
 
       });
     axios.get('https://api.github.com/users/gersonvargas')
       .then(function (response) {
-        console.log(response.data);
+       
         self.setState({ gerson: response.data })
       }).catch(function (res) {
 
       });
     axios.get('https://api.github.com/users/frander170896')
       .then(function (response) {
-        console.log(response.data);
+       
         self.setState({ frander: response.data })
       }).catch(function (res) {
 
       });
     axios.get('https://api.github.com/users/AnuardLuna')
       .then(function (response) {
-        console.log(response.data);
+       
         self.setState({ anuard: response.data })
       }).catch(function (res) {
 
