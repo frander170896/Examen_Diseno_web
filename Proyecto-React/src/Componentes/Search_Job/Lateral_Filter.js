@@ -90,7 +90,7 @@ class SelectUbicacion extends Component {
         }
         this.handlerOnChange = this.handlerOnChange.bind(this);
         this.eliminaDuplicadosUbicacion = this.eliminaDuplicadosUbicacion.bind(this);
-        this.eliminaDuplicadosEmpresa=this.eliminaDuplicadosEmpresa.bind(this);
+        this.eliminaDuplicadosEmpresa = this.eliminaDuplicadosEmpresa.bind(this);
 
     }
 
@@ -170,7 +170,7 @@ class SelectUbicacion extends Component {
             <div>
                 <label>{this.props.Lnombre}</label>
                 <select className="custom-select">
-                    <option  onClick={() => { this.handlerOnChange('All') }} value='All'>All</option>
+                    <option onClick={() => { this.handlerOnChange('All') }} value='All'>All</option>
                     {this.state.datos && this.state.datos.map((item, key) =>
                         <option key={item.id}
                             onClick={() => { this.handlerOnChange(item.location) }}
@@ -222,12 +222,24 @@ class LateralFilter extends Component {
             datos: this.props.job_list
         }
     }
+    handlerSubmit(event){
+        event.preventDefault();
+        alert('Hijo de tu puta madre!')
+        
+    }
     render() {
         return (
-            <form>
+            <form onSubmit={this.handlerSubmit}>
                 <InputDate Lnombre="Fecha Publicación"></InputDate>
                 <SelectUbicacion Lnombre="Ubicación" values={this.state.datos}></SelectUbicacion>
-                <Radio Lnombre="Tipo Horario"></Radio>
+                <div className="custom-control custom-radio">
+                    <input type="radio" id="customRadio1" name="customRadio" className="custom-control-input" />
+                    <label className="custom-control-label" for="customRadio1">Toggle this custom radio</label>
+                </div>
+                <div className="custom-control custom-radio">
+                    <input type="radio" id="customRadio2" name="customRadio" className="custom-control-input" />
+                    <label className="custom-control-label" for="customRadio2">Or toggle this other custom radio</label>
+                </div>
                 <input type="submit" value="Filtrar" className="btn btn-primary"></input>
 
             </form>
