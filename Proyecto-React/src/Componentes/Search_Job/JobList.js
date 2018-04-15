@@ -36,13 +36,14 @@ class JobItem extends Component {
     }
     handleShow() {
         this.setState({ show: true });
-
-        console.log('Handle show JOB LIST'+ this.state.show? 'True':'False');
+    }
+    handleHide() {
+        this.setState({ show: false });
     }
     render() {
         return (
             <div className="card border-success">
-               {this.state.show?<JobDetail visible={this.state.show} />:'JOB DETAIL WAITING'}
+               {this.state.show?<JobDetail visible={this.state.show} description={this.props.job_description}/>:''}
                 <div className="card border-success">
                     <div className="card-body">
                         <h2 className="card-title">{this.props.jobtitle}</h2>
