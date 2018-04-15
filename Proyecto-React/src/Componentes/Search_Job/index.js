@@ -14,12 +14,11 @@ class Search extends Component {
        
     }
     cambiaEstado(datos,referencia){
-        alert("Datos"+datos[0].id);
-        alert('mae llego');
+       
         referencia.setState({
             jobs: datos
         });
-       alert(referencia.state.jobs[0].title);
+      
     }
     componentDidMount(){
         const prueba = get_Jobs(this.cambiaEstado,this); 
