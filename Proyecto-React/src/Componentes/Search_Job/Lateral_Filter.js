@@ -84,14 +84,39 @@ class SelectUbicacion extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            empresas: null,
+            empresas: this.eliminaDuplicadosEmpresa(this.props.values),
             datos: this.eliminaDuplicadosUbicacion(this.props.values),
             todos_trabajos: this.props.values
         }
         this.handlerOnChange = this.handlerOnChange.bind(this);
         this.eliminaDuplicadosUbicacion = this.eliminaDuplicadosUbicacion.bind(this);
+        this.eliminaDuplicadosEmpresa=this.eliminaDuplicadosEmpresa.bind(this);
 
     }
+
+
+    containsEmpresa = (a, obj) => {
+        var i = a.length;
+        while (i--) {
+            if (a[i].company === obj) {
+                return true;
+            }
+        }
+        return false;
+    }
+    eliminaDuplicadosEmpresa = (array) => {
+        var resultado = [];
+        var i;
+        for (i = 0; i < array.length; i++) {
+            if (!this.containsEmpresa(resultado, array[i].company)) {
+                resultado.push(array[i]);
+            }
+        }
+        return resultado;
+    }
+
+
+
     contains = (a, obj) => {
         var i = a.length;
         while (i--) {
@@ -128,13 +153,16 @@ class SelectUbicacion extends Component {
         var self = this;
         /*const cfiltradas = referencia.filtrarCiudad(referencia.state.todos_trabajos, item);
         */
-        self.setState({
-            empresas: self.filtrarCiudad(self.state.todos_trabajos, item)
-        });
-
-        self.state.empresas ?
-            console.log("Data from child: " + self.state.empresas) :
-            console.log('no loaded in this');
+        if (item === 'All') {
+            self.setState({
+                empresas: self.eliminaDuplicadosEmpresa(self.state.todos_trabajos)
+            });
+        } else {
+            self.setState({
+                empresas: self.filtrarCiudad(self.state.todos_trabajos, item)
+            });
+        }
+        console.log(item);
     }
 
     render() {
@@ -142,7 +170,7 @@ class SelectUbicacion extends Component {
             <div>
                 <label>{this.props.Lnombre}</label>
                 <select className="custom-select">
-                <option value='All'>All</option>
+                    <option  onClick={() => { this.handlerOnChange('All') }} value='All'>All</option>
                     {this.state.datos && this.state.datos.map((item, key) =>
                         <option key={item.id}
                             onClick={() => { this.handlerOnChange(item.location) }}
@@ -157,7 +185,7 @@ class SelectUbicacion extends Component {
                         //  <SelectEmpresa Lnombre="Empresa" values={this.state.empresas}></SelectEmpresa>                  
                         this.state.empresas.map((item2, key) =>
                             <SelectOptionEmp key={item2.id} value={item2.id} text={item2.company}></SelectOptionEmp>
-                        ) : null
+                        ) : <option disable value='None'>None</option>
                     }
                 </select>
             </div>
