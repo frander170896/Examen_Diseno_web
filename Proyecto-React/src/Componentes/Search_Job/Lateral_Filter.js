@@ -20,14 +20,17 @@ class SelectOptionUb extends Component {
 
     }
     handlerOnChange(item) {
-        var mpadre = this.props.mpadre;
-        var referencia = this.props.referencia;
-        mpadre(item, referencia);
+        //  var mpadre = this.props.mpadre;
+        // mpadre(item);
         // console.log(referencia);
     }
     render() {
         return (
-            <option onClick={() => { this.handlerOnChange(this.props.text) }} value={this.props.value}>{this.props.text}</option>
+            <option
+                onClick={() => { this.handlerOnChange(this.props.text) }}
+                value={this.props.value}>
+                {this.props.text}
+            </option>
         );
     }
 }
@@ -35,7 +38,7 @@ class SelectOptionUb extends Component {
 class SelectOptionEmp extends Component {
     render() {
         return (
-            <option disabled value={this.props.value}>{this.props.text}</option>
+            <option value={this.props.value}>{this.props.text}</option>
         );
     }
 }
@@ -81,12 +84,12 @@ class SelectUbicacion extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            empresas: [],
-            datos: this.eliminaDuplicadosUbicacion(this.props.values),           
+            empresas: null,
+            datos: this.eliminaDuplicadosUbicacion(this.props.values),
             todos_trabajos: this.props.values
         }
         this.handlerOnChange = this.handlerOnChange.bind(this);
-        this.eliminaDuplicadosUbicacion=this.eliminaDuplicadosUbicacion.bind(this);
+        this.eliminaDuplicadosUbicacion = this.eliminaDuplicadosUbicacion.bind(this);
 
     }
     contains = (a, obj) => {
@@ -110,53 +113,54 @@ class SelectUbicacion extends Component {
 
         return resultado;
     }
-
-    containsCiudad = (a, obj) => {
-        var i = a.length;
-        while (i--) {
-            if (a[i].location === obj) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     filtrarCiudad = (array, ciudad) => {
         var resultado = [];
         var i;
         for (i = 0; i < array.length; i++) {
-            if (!this.containsCiudad(resultado, array[i].location)) {
-                resultado.push(array[i]);
-            }
+            array[i].location === ciudad ? resultado.push(array[i]) : 0;
+
         }
 
         return resultado;
     }
 
-    handlerOnChange(item, referencia) {
-       
-        const cfiltradas = referencia.filtrarCiudad(referencia.state.todos_trabajos, item);
-        referencia.setState({
-            empresas : referencia.eliminaDuplicadosUbicacion(cfiltradas)
+    handlerOnChange(item) {
+        var self = this;
+        /*const cfiltradas = referencia.filtrarCiudad(referencia.state.todos_trabajos, item);
+        */
+        self.setState({
+            empresas: self.filtrarCiudad(self.state.todos_trabajos, item)
         });
 
-        //console.log("Data from child: " +referencia.state.empresas);
+        self.state.empresas ?
+            console.log("Data from child: " + self.state.empresas) :
+            console.log('no loaded in this');
     }
+
     render() {
         return (
             <div>
                 <label>{this.props.Lnombre}</label>
                 <select className="custom-select">
                     {this.state.datos && this.state.datos.map((item, key) =>
-                        <SelectOptionUb key={item.id}
-                            value={item.id}
-                            text={item.location}
-                            mpadre={this.handlerOnChange}
-                            referencia={this}
-                        >
-                        </SelectOptionUb>)}
+                        <option key={item.id}
+                            onClick={() => { this.handlerOnChange(item.location) }}
+                            value={item.id}>
+                            {item.location}
+                        </option>
+                    )}
                 </select>
-                {this.state.empresas ? <SelectEmpresa Lnombre="Empresa" values={this.state.empresas}></SelectEmpresa> : ''}
+                <label>Empresa:</label>
+                <select className="custom-select" >
+                {this.state.empresas ?
+                   //  <SelectEmpresa Lnombre="Empresa" values={this.state.empresas}></SelectEmpresa>                  
+                   this.state.empresas.map((item2, key) =>                       
+                        <SelectOptionEmp key={item2.id} value={item2.id} text={item2.company}></SelectOptionEmp>
+                    )
+                      :                     
+                     ''
+                     }
+                     </select>
             </div>
         );
     }
