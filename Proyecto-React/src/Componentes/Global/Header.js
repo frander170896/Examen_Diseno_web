@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './css/Global/footer.css';
-
+import './css/Global/header.css';
 import banner from "./images/banner-jobs3.jpg";
 import user from "./icons/usuario.png";
 
@@ -21,7 +21,7 @@ class Header extends Component {
             <div>
                 <div className=''>
                     <nav className="navbar navbar-expand-sm navbar-light bg-light font-weight-bold">
-                        <img src={logoHeader} className="img-thumbnail" id="image" alt="image" />
+                        <img src={logoHeader} className="img-thumbnail " id="image" alt="image" />
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
@@ -43,7 +43,7 @@ class Header extends Component {
                     </nav>
                 </div>
                 <div className="row mt-1">
-                    <img src={banner} className="img-thumbnail" id="imgheader" alt="header" />
+                    <img src={banner} className="img-thumbnail banner" id="imgheader" alt="header" />
                 </div>
 
             </div>
