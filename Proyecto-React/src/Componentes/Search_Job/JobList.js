@@ -31,7 +31,11 @@ class JobItem extends Component {
             how_to_apply: 'Email us!'
         };
     }
-
+handleClick = () => {
+    alert('clicked on '+props.job_description);
+    this.props.onHeaderClick(this.props.value);
+  }
+   
     render() {
         return (
             <div className="card border-success">
@@ -46,7 +50,7 @@ class JobItem extends Component {
                         <p><i><strong>Created:</strong>  {this.props.created_at}</i> </p>
                         <p className="card-text">{this.props.job_description}</p>
                         
-                        
+                        <button className="btn btn-primary" onClick="{showModal(this.props)}">View Job and apply</button>
                         <p>
                             <i><strong>How to apply: </strong>{this.props.how_to_apply}</i>
                             <ApplyLink company_url={this.props.company_url} action_name={'Go to companys page...'} />
