@@ -49,7 +49,7 @@ class JobItem extends Component {
                             <p>Click to get the full Modal experience!</p>
                 
                 
-                            <button className="btn btn-primary" onClick={this.handleShow}>View Job and apply</button>
+                            <button className="btn btn-primary" onClick={()=>{this.handleShow}}>View Job and apply</button>
                             <p>
                                 <i><strong>How to apply: </strong>{this.props.how_to_apply}</i>
                             <ApplyLink company_url={this.props.company_url} action_name={'Go to companys page...'} />
