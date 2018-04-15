@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import JobDetail from './JobDetail';
 
 class CompanyLogo extends Component {
     render() {
@@ -28,14 +29,17 @@ class JobItem extends Component {
             job_type: 'Full time',
             company_description: 'We are improving',
             created_at: null,
-            how_to_apply: 'Email us!'
+            how_to_apply: 'Email us!',
+            show:false
         };
     }
-    
+    handleShow() {
+    this.setState({ show: true });
+  }
     render() {
         return (
                 <div className="card border-success">
-        
+        <JobDetail visible={this.state.show} />
                     <div className="card border-success">
                         <div className="card-body">
                             <h2 className="card-title">{this.props.jobtitle}</h2>
@@ -49,7 +53,7 @@ class JobItem extends Component {
                             <p>Click to get the full Modal experience!</p>
                 
                 
-                            <button className="btn btn-primary" onClick={()=>{this.handleShow}}>View Job and apply</button>
+                            <button className="btn btn-primary" onClick={this.handleShow}>View Job and apply</button>
                             <p>
                                 <i><strong>How to apply: </strong>{this.props.how_to_apply}</i>
                             <ApplyLink company_url={this.props.company_url} action_name={'Go to companys page...'} />

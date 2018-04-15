@@ -29,7 +29,7 @@ import Button from 'react-bootstrap/lib/Button';
 
   render() {
     return (
-      <Modal visible={this.state.show} onClickBackdrop={this.modalBackdropClicked}>
+      <Modal visible={this.props.show} onClickBackdrop={this.modalBackdropClicked}>
         <div className="modal-header">
           <h5 className="modal-title">Red Alert!</h5>
         </div>

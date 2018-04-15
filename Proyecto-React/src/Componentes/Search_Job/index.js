@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import JobDetail from './View_Jobs';
 import LateralFilter from './Lateral_Filter';
 import JobList from './JobList.js';
 import axios from 'axios';
@@ -28,7 +27,7 @@ class Search extends Component {
     render() {
         return (
                 <div className="container">
-                    <JobDetail  />
+                    
                     <div className="row search">
                 
                     </div>
