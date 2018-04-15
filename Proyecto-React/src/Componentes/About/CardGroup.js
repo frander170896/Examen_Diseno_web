@@ -18,12 +18,19 @@ class Card extends Component {
       <div className="card">
         <img className="card-img-top img-fluid rounded" src={this.state.usuario.avatar_url} alt="Card image cap" />
         <div className="card-body">
-          <h5 className="card-title">{this.state.usuario.login}</h5>
-          <p className="card-text">{this.state.about_me}</p>
+          <h5 className="card-title">{this.state.usuario.name?this.state.usuario.name:this.state.usuario.login}</h5>
+          <p className="card-text">{this.state.usuario.bio?this.state.usuario.bio:this.state.about_me}</p>
+          <p className="card-text">
+          <small className="text-muted">
+         
+          </small>
+          </p>
         </div>
         <div className="card-footer">
           <small className="text-muted">
-           
+          <i>{this.state.usuario.created_at}</i>
+          <hr/>
+          <p>Follow me: </p>
             <a href={this.state.red_social}>
               <img className="rounded" src={Facebook} alt="Card image cap" />
             </a>
