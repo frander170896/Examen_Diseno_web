@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import renderHTML from 'react-render-html';
+
 import JobDetail from './JobDetail';
 
 class CompanyLogo extends Component {
@@ -19,6 +20,7 @@ class ApplyLink extends Component {
         );
     }
 }
+
 class JobItem extends Component {
     constructor(props) {
         super(props);
@@ -38,13 +40,10 @@ class JobItem extends Component {
     handleShow() {
         this.setState({ show: true });
     }
-    handleHide() {
-        this.setState({ show: false });
-    }
     render() {
         return (
             <div className="card border-success">
-               {this.state.show?<JobDetail visible={this.state.show} jobtitle={this.props.jobtitle} description={this.props.job_description}/>:''}
+               {this.state.show?<JobDetail show={this.state.show}  visible={this.state.show} company_url={this.props.company_url} company_description={this.props.company_description} how_to_apply={this.props.how_to_apply} company_logo={this.props.company_logo} jobtitle={this.props.jobtitle} description={this.props.job_description}/>:''}
                 <div className="card border-success">
                     <div className="card-body">
                         <h2 className="card-title">{this.props.jobtitle}</h2>
@@ -61,7 +60,6 @@ class JobItem extends Component {
                         <button className="btn btn-primary" onClick={this.handleShow}>View Job and apply</button>
 
                         <p>
-                            <i><strong>How to apply: </strong>{this.props.how_to_apply}</i>
                             <ApplyLink company_url={this.props.company_url} action_name={'Go to companys page...'} />
                         </p>
                         <h3 className="card-subtitle mb-2 text-muted">About the company</h3>

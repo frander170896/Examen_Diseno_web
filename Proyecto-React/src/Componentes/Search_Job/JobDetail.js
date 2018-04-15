@@ -7,31 +7,50 @@ import OverlayTrigger from 'react-bootstrap/lib/OverlayTrigger';
 import Button from 'react-bootstrap/lib/Button';
 import renderHTML from 'react-render-html';
 
-    class JobDetail extends Component {
-   constructor(props, context) {
-    super(props, context);
-    this.state = {
-        description:this.props.description,
-        jobtitle:this.props.jobtitle
-    };
-  }
+class JobDetail extends Component {
+    constructor(props, context) {
+        super(props, context);
+        this.state = {
+            description: this.props.description,
+            jobtitle: this.props.jobtitle,
+            show: this.props.show,
+            company_logo: this.props.company_logo,
+            company_description:this.props.company_description,
+            company_url:this.props.company_url,
+            how_to_apply:this.props.how_to_apply
+            
+        };
 
-  render() {
-      
-    return (
-      <Modal visible={true} onClickBackdrop={this.modalBackdropClicked}>
-        <div className="modal-header">
-          <h5 className="modal-title">Job Name: {this.state.jobtitle}</h5>
-        </div>
-        <div className="modal-body">
-          {renderHTML(this.state.description)}
-        </div>
-        <div className="modal-footer">
-          <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </Modal>
-    );
-  }
+        this.hideModal = this.hideModal.bind(this);
+    }
+    hideModal() {
+        this.setState({
+            show: false
+        });
+    }
+
+    render() {
+
+        return (
+                <Modal visible={this.state.show} onClickBackdrop={this.hideModal} dialogClassName="modal-lg">
+                    <div className="modal-header">
+                        <h5 className="modal-title">Job Name: {this.state.jobtitle}</h5>
+                    </div>
+                    <div className="modal-body">
+                        <p>{renderHTML(this.state.description)}</p>
+                        <img src={this.props.company_logo} className="img-thumbnail" alt="company" />
+                        <p>
+                            <i>{this.state.company_description}
+                                 <a className='active btn btn-link' href={this.state.company_url}>Visit us</a>
+                            </i>
+                        </p>
+                    </div>
+                    <div className="modal-footer">
+                        <a className='active btn btn-link'>{renderHTML(this.state.how_to_apply)}</a>
+                        <button type="button" class="btn btn-secondary" onClick={this.hideModal}>Close</button>
+                    </div>
+                </Modal>
+                );
+    }
 }
 export default JobDetail;
