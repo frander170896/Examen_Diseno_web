@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import './css/footer.css';
+import './css/Global/footer.css';
 
 import banner from "./images/banner-jobs3.jpg";
 import user from "./icons/usuario.png";
