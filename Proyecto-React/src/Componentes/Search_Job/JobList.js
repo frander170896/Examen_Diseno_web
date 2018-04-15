@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import renderHTML from 'react-render-html';
 import JobDetail from './JobDetail';
 
 class CompanyLogo extends Component {
@@ -53,7 +54,7 @@ class JobItem extends Component {
 
                         </p>
                         <p><i><strong>Created:</strong>  {this.props.created_at}</i> </p>
-                        <p className="card-text">{this.props.job_description}</p>
+                        <p className="card-text">{renderHTML(this.props.job_description)}</p>
                         <p>Click to get the full Modal experience!</p>
 
 
