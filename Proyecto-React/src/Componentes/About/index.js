@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import about_us from "../Global/images/About.jpg";
 import '../Global/css/About/about.css';
+
 class About extends Component {
     render() {
         return (
