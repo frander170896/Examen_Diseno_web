@@ -3,14 +3,18 @@
   height: 300px; }
 
 .color_header {
-  background: #383CA3;
+  background-color: #383CA3;
   color: #ffffff; }
 
 .color_header a {
   color: #ffffff;
   text-decoration: none; }
 
-.color_header a hover {
-  color: #2C2f7C; }
+.color_header li hover {
+  background-color: #555;
+  color: white; }
+
+.margenes-header {
+  margin: auto 200px; }
 
 /*# sourceMappingURL=header.css.map */
