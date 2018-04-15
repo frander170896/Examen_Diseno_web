@@ -142,6 +142,7 @@ class SelectUbicacion extends Component {
             <div>
                 <label>{this.props.Lnombre}</label>
                 <select className="custom-select">
+                <option value='All'>All</option>
                     {this.state.datos && this.state.datos.map((item, key) =>
                         <option key={item.id}
                             onClick={() => { this.handlerOnChange(item.location) }}
@@ -152,15 +153,13 @@ class SelectUbicacion extends Component {
                 </select>
                 <label>Empresa:</label>
                 <select className="custom-select" >
-                {this.state.empresas ?
-                   //  <SelectEmpresa Lnombre="Empresa" values={this.state.empresas}></SelectEmpresa>                  
-                   this.state.empresas.map((item2, key) =>                       
-                        <SelectOptionEmp key={item2.id} value={item2.id} text={item2.company}></SelectOptionEmp>
-                    )
-                      :                     
-                     ''
-                     }
-                     </select>
+                    {this.state.empresas ?
+                        //  <SelectEmpresa Lnombre="Empresa" values={this.state.empresas}></SelectEmpresa>                  
+                        this.state.empresas.map((item2, key) =>
+                            <SelectOptionEmp key={item2.id} value={item2.id} text={item2.company}></SelectOptionEmp>
+                        ) : null
+                    }
+                </select>
             </div>
         );
     }
@@ -200,9 +199,7 @@ class LateralFilter extends Component {
             <form>
                 <InputDate Lnombre="Fecha Publicación"></InputDate>
                 <SelectUbicacion Lnombre="Ubicación" values={this.state.datos}></SelectUbicacion>
-
                 <Radio Lnombre="Tipo Horario"></Radio>
-
                 <input type="submit" value="Filtrar" className="btn btn-primary"></input>
 
             </form>
