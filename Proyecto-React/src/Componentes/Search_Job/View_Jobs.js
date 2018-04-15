@@ -1,6 +1,10 @@
 // Dependencies
 import React, { Component } from 'react';
-
+import Modal from 'react-bootstrap/lib/Modal';
+import Popover from 'react-bootstrap/lib/Popover';
+import Tooltip from 'react-bootstrap/lib/Tooltip';
+import OverlayTrigger from 'react-bootstrap/lib/OverlayTrigger';
+import Button from 'react-bootstrap/lib/Button';
 
     class JobDetail extends Component {
   constructor(props, context) {
@@ -32,12 +36,6 @@ import React, { Component } from 'react';
 
     return (
       <div>
-        <p>Click to get the full Modal experience!</p>
-
-        <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-          Launch demo modal
-        </Button>
-
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Modal heading</Modal.Title>
@@ -85,5 +83,4 @@ import React, { Component } from 'react';
   }
 }
 
-render(<ViewJob />);
 export default JobDetail;
