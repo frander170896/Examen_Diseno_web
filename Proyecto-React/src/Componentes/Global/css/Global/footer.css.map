@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": ";AACA,aAAa;EACX,UAAU,EAAE,OAAO;EACnB,KAAK,EAAE,OAAO;;AAGd,eAAC;EACC,KAAK,EAAE,OAAO;EACd,eAAe,EAAE,IAAI;;AAIrB,qBAAK;EACH,KAAK,EAAE,OAAO;;AAEpB,gBAAgB;EACd,MAAM,EAAE,UAAU",
+"mappings": ";AACA,aAAa;EACX,UAAU,EAAE,OAAO;EACnB,KAAK,EAAE,OAAO;;AAGd,eAAC;EACC,KAAK,EAAE,OAAO;EACd,eAAe,EAAE,IAAI;;AAIrB,qBAAK;EACH,KAAK,EAAE,OAAO;;AAEpB,gBAAgB;EACd,MAAM,EAAE,UAAU;;AAEpB,qCAAqC;EACnC,gBAAgB;IACd,MAAM,EAAE,eAAe;IACvB,OAAO,EAAE,gBAAgB",
 "sources": ["../../../../../../../../Dise%C3%B1o%20Web/project-1-website-searching-jobs-delta/Proyecto-React/src/Componentes/Global/css/Global/footer.sass"],
 "names": [],
 "file": "footer.css"

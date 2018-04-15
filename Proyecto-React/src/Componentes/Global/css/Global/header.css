@@ -17,4 +17,13 @@
 .margenes-header {
   margin: auto 200px; }
 
+@media screen and (max-width: 1200px) {
+  .margenes-header {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px; }
+
+  .banner {
+    width: 100%;
+    height: 100px; } }
+
 /*# sourceMappingURL=header.css.map */

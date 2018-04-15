@@ -13,4 +13,9 @@
 .margenes-footer {
   margin: auto 200px; }
 
+@media screen and (max-width: 1200px) {
+  .margenes-footer {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 30px; } }
+
 /*# sourceMappingURL=footer.css.map */

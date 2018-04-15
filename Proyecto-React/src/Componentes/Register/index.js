@@ -2,12 +2,11 @@
 import React, { Component } from 'react';
 import register_img from "../Global/images/register.png";
 import '../Global/css/Register/register.css';
-import '../Global/css/Global/content.css';
 
 class Register extends Component {
     render() {
         return (
-            <div className="Register text-center">
+            <div className="Register text-center ">
                 <img src={register_img} alt="Register"/>
                 <form className="register-form" action="" method="">
                     <fieldset className="scheduler-border">
