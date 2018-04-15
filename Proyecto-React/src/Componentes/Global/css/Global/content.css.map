@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,mBAAmB;EACjB,MAAM,EAAE,UAAU",
+"mappings": "AAAA,mBAAmB;EACjB,MAAM,EAAE,UAAU;;AAEpB,YAAY;EACV,gBAAgB,EAAE,OAAO",
 "sources": ["../../../../../../../../Dise%C3%B1o%20Web/project-1-website-searching-jobs-delta/Proyecto-React/src/Componentes/Global/css/Global/content.sass"],
 "names": [],
 "file": "content.css"
