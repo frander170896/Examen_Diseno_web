@@ -44,7 +44,7 @@ class JobItem extends Component {
     render() {
         return (
             <div className="card border-success">
-               {this.state.show?<JobDetail visible={this.state.show} jobtitle={this.props.jobtitle} description={this.props.job_description}/>:''}
+               {this.state.show?<JobDetail visible={this.state.show} description={this.props.job_description}/>:''}
                 <div className="card border-success">
                     <div className="card-body">
                         <h2 className="card-title">{this.props.jobtitle}</h2>
