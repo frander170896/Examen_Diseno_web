@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": ";AAEA,yBAAyB;EACvB,YAAY,EAAE,MAAM;EACpB,aAAa,EAAE,GAAG;EAClB,MAAM,EAAE,0BAA0B;EAClC,OAAO,EAAE,8BAA8B;EACvC,MAAM,EAAE,sBAAsB;EAC9B,kBAAkB,EAAG,oBAAoB;EACzC,UAAU,EAAG,oBAAoB;;AAGnC,uBAAuB;EACrB,SAAS,EAAE,gBAAgB;EAC3B,WAAW,EAAE,eAAe;EAC5B,UAAU,EAAE,eAAe;EAC3B,KAAK,EAAE,IAAI;EACX,OAAO,EAAE,MAAM;EACf,aAAa,EAAE,IAAI",
+"sources": ["../../../../../../../../Dise%C3%B1o%20Web/project-1-website-searching-jobs-delta/Proyecto-React/src/Componentes/Global/css/Register/register.sass"],
 "names": [],
 "file": "register.css"
 }
