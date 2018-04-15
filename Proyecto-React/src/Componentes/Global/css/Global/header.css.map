@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,OAAO;EACL,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,KAAK;;AAEf,aAAa;EACX,gBAAgB,EAAE,OAAO;EACzB,KAAK,EAAE,OAAO;;AAGd,eAAC;EACC,KAAK,EAAE,OAAO;EACd,eAAe,EAAE,IAAI;;AAIrB,qBAAK;EACH,KAAK,EAAE,OAAO",
+"mappings": "AAAA,OAAO;EACL,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,KAAK;;AAEf,aAAa;EACX,gBAAgB,EAAE,OAAO;EACzB,KAAK,EAAE,OAAO;;AAGd,eAAC;EACC,KAAK,EAAE,OAAO;EACd,eAAe,EAAE,IAAI;;AAIrB,sBAAK;EACH,gBAAgB,EAAE,IAAI;EACtB,KAAK,EAAE,KAAK",
 "sources": ["../../../../../../../../Dise%C3%B1o%20Web/project-1-website-searching-jobs-delta/Proyecto-React/src/Componentes/Global/css/Global/header.sass"],
 "names": [],
 "file": "header.css"
