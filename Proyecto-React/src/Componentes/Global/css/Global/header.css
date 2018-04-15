@@ -2,4 +2,15 @@
   width: 100%;
   height: 300px; }
 
+.color_header {
+  background-color: #383CA3;
+  color: #ffffff; }
+
+.color_header a {
+  color: #ffffff;
+  text-decoration: none; }
+
+.color_header a hover {
+  color: #2C2f7C; }
+
 /*# sourceMappingURL=header.css.map */
