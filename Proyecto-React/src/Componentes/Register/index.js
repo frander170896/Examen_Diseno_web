@@ -16,14 +16,12 @@ class Register extends Component {
                             <input className="form-control" type="text" placeholder="Full Name"/>
                         </div>
                         <div className="input-group">
-                            <label className="custom-control custom-radio">
-                                <input id="radio1" name="radio" type="radio" className="custom-control-input"/>
-                                <span className="custom-control-indicator"></span>
+                            <label>
+                                <input name="gender" type="radio"/>
                                 <span className="custom-control-description">Male</span>
                             </label>
-                            <label className="custom-control custom-radio">
-                                <input id="radio2" name="radio" type="radio" className="custom-control-input"/>
-                                <span className="custom-control-indicator"></span>
+                            <label>
+                                <input name="gender" type="radio"/>
                                 <span className="custom-control-description">Female</span>
                             </label>
                         </div>
