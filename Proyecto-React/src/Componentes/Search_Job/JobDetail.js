@@ -11,16 +11,17 @@ import renderHTML from 'react-render-html';
    constructor(props, context) {
     super(props, context);
     this.state = {
-        description:this.props.description
+        description:this.props.description,
+        jobtitle:this.props.jobtitle
     };
   }
 
   render() {
       
     return (
-      <Modal visible={true} onClickBackdrop={this.modalBackdropClicked}>
+      <Modal visible={true} onClickBackdrop={this.modalBackdropClicked} dialogClassName="modal-lg">
         <div className="modal-header">
-          <h5 className="modal-title">Red Alert!</h5>
+          <h5 className="modal-title">Job Name: {this.state.jobtitle}</h5>
         </div>
         <div className="modal-body">
           {renderHTML(this.state.description)}
