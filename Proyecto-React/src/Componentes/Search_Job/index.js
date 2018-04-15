@@ -33,7 +33,7 @@ class Search extends Component {
             <div className="row jobs">
 
                 <div className="col-ms-12 col-md-3 col-lg-3" >
-                    <LateralFilter></LateralFilter>
+                {!this.state.jobs?'Loading':<LateralFilter job_list={this.state.jobs}></LateralFilter>}
                 </div>
                 <div className="col-ms-12 col-md-9 col-lg-9" >
                     {!this.state.jobs?'Loading':<JobList job_list={this.state.jobs} />}

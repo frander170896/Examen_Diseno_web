@@ -1,25 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const jsonPrueba = [
-    {
-       "value":"1",
-       "text":"Opción 1"
-    },
-    {
-       "value":"2",
-       "text":"Opción 2"
-    },
-    {
-       "value":"3",
-       "text":"Opción 3"
-    },
-    {
-       "value":"4",
-       "text":"Opción 4"
-    }
-   ];
-
 class InputDate extends Component{
     render(){
         return (
@@ -39,19 +20,67 @@ class SelectOption extends Component{
         );
     }
 }
-class Select extends Component{
+class SelectEmpresa extends Component{
     render(){
         const items = this.props.values;
         return (
             <div>
                 <label>{this.props.Lnombre}</label>
                 <select className="custom-select" >
-                { items && items.map((item,key) =><SelectOption key={key} value={item.value} text={item.text}></SelectOption>)}
+                { items && items.map((item,key) =><SelectOption key={item.id} value={item.id} text={item.company}></SelectOption>)}
                 </select>
             </div>
         );
     }
 }
+
+class SelectUbicacion extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            datos : this.eliminaDuplicadosUbicacion(this.props.values)
+        }
+        
+    }
+    contains = (a, obj) => {
+        var i = a.length;
+        while (i--) {
+           if (a[i].location === obj) {
+               return true;
+           }
+        }
+        return false;
+    }
+    eliminaDuplicadosUbicacion = (array) =>{
+        alert("Entro");
+        var resultado = [];
+        var i;
+        for(i=0;i<array.length;i++){
+            if(!this.contains(resultado,array[i].location)){
+                resultado.push(array[i]);
+            }
+        }
+
+        return resultado;
+    }
+    render(){
+        
+
+        return (
+            <div>
+                <label>{this.props.Lnombre}</label>
+                <select className="custom-select" >
+                    { this.state.datos && this.state.datos.map((item,key) =>
+                        <SelectOption key={item.id}
+                         value={item.id}
+                         text={item.location}>
+                         </SelectOption>)}
+                </select>
+            </div>
+        );
+    }
+}
+
 class OpcionesRadio extends Component{
     render(){
         return (// seria bueno agregarle acciones a las opciones para que filteren o para que llenen los otros filtros
@@ -75,14 +104,19 @@ class Radio extends Component{
     }
 }   
 class LateralFilter extends Component{
-    
+    constructor (props){
+        super(props);
+        this.state = {
+            datos : this.props.job_list
+        }
+    }
     render(){
         return(
            <form>
                <InputDate Lnombre="Fecha Publicación"></InputDate>
-               <Select Lnombre="Empresa" values={jsonPrueba}></Select>
-               <Select Lnombre="Ubicación" values={jsonPrueba}></Select>
-               <Radio Lnombre="Tipo Horario" values={jsonPrueba}></Radio>
+               <SelectUbicacion Lnombre="Ubicación" values={this.state.datos}></SelectUbicacion>
+               <SelectEmpresa Lnombre="Empresa" values={this.state.datos}></SelectEmpresa>
+               <Radio Lnombre="Tipo Horario"></Radio>
                
                <input type="submit" value="Filtrar" className="btn btn-primary"></input> 
             
