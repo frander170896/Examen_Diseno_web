@@ -1,34 +1,31 @@
 // Dependencies
 import React, { Component } from 'react';
 import axios from 'axios';
-import Facebook from "../Global/icons/facebook.png";
-import Github from "../Global/icons/github.png";
+import Visita from "../Global/icons/visita.png";
 class Card extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      usuario: this.props.usuario,
-      about_me: this.props.about_me,
-      red_social: this.props.red_social,
-      trabajo_git:this.props.trabajo_git
+      company_url: this.props.company_url,
+      company_name: this.props.company_name,
+      company_logo: this.props.company_logo
     }
   }
   render() {
     return (
       <div className="card">
-        <img className="card-img-top img-fluid rounded" src={this.state.usuario.avatar_url} alt="Card image cap" />
         <div className="card-body">
-          <h5 className="card-title">{this.state.usuario.login}</h5>
-          <p className="card-text">{this.state.about_me}</p>
+          <h5 className="card-title">{this.state.company_name}</h5>
+          <p className="card-text">
+            <img className="card-img-top img-fluid rounded" src={this.state.company_logo} alt="Card image cap" />
+
+          </p>
         </div>
         <div className="card-footer">
           <small className="text-muted">
-           
-            <a href={this.state.red_social}>
-              <img className="rounded" src={Facebook} alt="Card image cap" />
-            </a>
-            <a href={this.state.trabajo_git}>
-              <img className="rounded" src={Github} alt="Card image cap" />
+
+            <a className='btn btn-primary' href={this.state.company_url}> Visit us
+              <img className="rounded" src={Visita} alt="Card image cap" />
             </a>
           </small>
         </div>
@@ -40,89 +37,32 @@ class CardGroup extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      gerson: null,
-      frander: null,
-      marco: null,
-      nacho: null,
-      anuard: null
+      apple_url: null,
+      microsft_url: null,
+      microsft_logo: null
     }
-    this.componentDidMount = this.componentDidMount.bind(this);
-
   }
-
-  componentDidMount() {
-    var self = this;
-    //axios.get('https://api.github.com/users/gersonvargas')
-    //marcoc22
-    //NAchoAvalos
-    //frander170896
-    axios.get('https://api.github.com/users/marcoc22')
-      .then(function (response) {
-        console.log(response.data);
-        self.setState({ marco: response.data })
-      }).catch(function (res) {
-
-      });
-    axios.get('https://api.github.com/users/NAchoAvalos')
-      .then(function (response) {
-        console.log(response.data);
-        self.setState({ nacho: response.data })
-      }).catch(function (res) {
-
-      });
-    axios.get('https://api.github.com/users/gersonvargas')
-      .then(function (response) {
-        console.log(response.data);
-        self.setState({ gerson: response.data })
-      }).catch(function (res) {
-
-      });
-    axios.get('https://api.github.com/users/frander170896')
-      .then(function (response) {
-        console.log(response.data);
-        self.setState({ frander: response.data })
-      }).catch(function (res) {
-
-      });
-    axios.get('https://api.github.com/users/AnuardLuna')
-      .then(function (response) {
-        console.log(response.data);
-        self.setState({ anuard: response.data })
-      }).catch(function (res) {
-
-      });
-  }
-
   render() {
     return (
       <div className="card-group">
-      
-       {this.state.marco ? <Card usuario={this.state.marco}
-          red_social={'https://www.facebook.com'}
-          trabajo_git={'https://github.com/marcoc22'}
-          about_me={'I am working as developer and I am studying at UNA, Costa Rica.'} /> : ''}
-     
-        {this.state.gerson ? <Card usuario={this.state.gerson}
-          red_social={'https://www.facebook.com'}
-          trabajo_git={'https://github.com/gersonvargas'}
-          about_me={'I am working as an Oracle DBA at GBSYS company. Also, I am studying at UNA, Costa Rica.'} /> : ''}
-       
-        {this.state.frander? <Card usuario={this.state.frander}
-          red_social={'https://www.facebook.com'}
-          trabajo_git={'https://github.com/frander170896'}
-          about_me={'I am working as a developer, graduated from UNA. Currently I am studying at UNA, Costa Rica.'} /> : ''}
-          
-           {this.state.nacho? <Card usuario={this.state.nacho}
-          red_social={'https://www.facebook.com'}
-          trabajo_git={'https://github.com/NachoAvalos'}
-          about_me={'Currently I am studying at UNA, Costa Rica.'} /> : ''}
-        
-          {this.state.anuard? <Card usuario={this.state.anuard}
-          red_social={'https://www.facebook.com'}
-          trabajo_git={'https://github.com/AnuarLuna'}
-          about_me={'I am working and studying at UNA.'} /> : ''}
-        </div>
-    );
+
+        <Card
+          company_name={'Microsft'}
+          company_logo={'http://github-jobs.s3.amazonaws.com/b5365b6a-260c-11e8-9128-3e3ad804da5f.jpg'}
+          company_url={'https://www.microsoft.com'}
+        />
+        <Card
+          company_name={'King'}
+          company_logo={'http://github-jobs.s3.amazonaws.com/da654754-3e79-11e8-9f35-642e887b6c66.png'}
+          company_url={'https://king.com/'}
+        />
+        <Card
+          company_name={'Bolt Labs'}
+          company_logo={'http://github-jobs.s3.amazonaws.com/4e7deaba-4023-11e8-94aa-cb3faf9b4e3d.PNG'}
+          company_url={'https://www.bolttoken.org/'}
+        />
+      </div>
+    )
   }
 }
 
