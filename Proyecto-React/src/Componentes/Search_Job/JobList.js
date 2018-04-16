@@ -52,8 +52,8 @@ class JobItem extends Component {
                             <i><strong>Job Type:  </strong> {this.props.job_type}</i>
 
                         </p>
-                        <p><i><strong>Created:</strong>  {this.props.created_at}</i> </p>
-                        <p className="card-text">{renderHTML(this.props.job_description)}</p>
+                    
+                        <p className="card-text">{this.props.created_at}</p>
 
 
                         <button className="btn btn-primary" onClick={this.handleShow}>View Job and apply</button>
@@ -62,6 +62,7 @@ class JobItem extends Component {
                             <ApplyLink company_url={this.props.company_url} action_name={'Go to companys page...'} />
                         </p>
                         <h3 className="card-subtitle mb-2 text-muted">About the company</h3>
+                        <h4>{this.props.company}</h4>
                         <CompanyLogo company_logo={this.props.company_logo} />
                         <p>
                             <i>{this.props.company_description}
@@ -83,7 +84,7 @@ class JobList extends Component {
         this.state = {
             jobs: this.props.job_list
         }
-        console.log(this.state.jobs[0])
+        //console.log(this.state.jobs[0])
     }
     render() {
         return (
@@ -95,6 +96,7 @@ class JobList extends Component {
                     how_to_apply={elemento.how_to_apply}
                     company_logo={elemento.company_logo}
                     company_url={elemento.company_url}
+                    company={elemento.company}
                 />
             </div>)
 
