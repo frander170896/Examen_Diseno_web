@@ -28,9 +28,9 @@ class Header extends Component {
                         </button>
 
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul className="navbar-nav mr-auto ">
+                            <ul className="navbar-nav mr-auto negro">
                                 {items && items.map(
-                                    (item, key) => <li className='nav-item' key={key}><Link className='btn btn-link' to={item.url}>{item.title}</Link></li>
+                                    (item, key) => <li className='nav-item' key={key}><Link className='btn ' to={item.url}>{item.title}</Link></li>
                                 )}
 
                             </ul>
