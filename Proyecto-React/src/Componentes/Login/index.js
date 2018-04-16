@@ -30,10 +30,39 @@ class Login extends Component {
                         <h5 className="modal-title">Login</h5>
                     </div>
                     <div className="modal-body">
-                        
+                        <div className="row">
+                        <div className="col-md-1"></div>
+                            <div className="card border-dark col-md-10">
+                                <div className="card-header h2">Login</div>
+                                <div className="card-body text-dark">
+                                    <form>
+                                    <div className="form-group">
+                                            <label className="sr-only" for="email">Email</label>
+                                            <div className="input-group mb-2">
+                                                <div className="input-group-prepend">
+                                                    <div className="input-group-text">@</div>
+                                                </div>
+                                                <input type="email" className="form-control" id="email" placeholder="Email"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label className="sr-only" for="password">Password</label>
+                                            <div className="input-group mb-2">
+                                                <div className="input-group-prepend">
+                                                    <div className="input-group-text fa fa-user"></div>
+                                                </div>
+                                                <input type="password" class="form-control" id="password" placeholder="Password"/>
+                                            </div>
+                                        </div>
+                                        <a className="btn btn-primary mb-2" href="search">Login</a>
+                                        <small><a href="register">Or create an account</a></small>
+                                    </form>
+                                </div>
+                            </div>
+                             <div className="col-md-1"></div>
+                        </div>
                     </div>
                     <div className="modal-footer">
-                        <button type="button" class="btn btn-secondary" href="search">Close</button>
                         <button type="button" class="btn btn-secondary" onClick={this.hideModal}>Close</button>
                     </div>
                 </Modal>
