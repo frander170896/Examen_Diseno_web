@@ -54,7 +54,6 @@ class JobItem extends Component {
                         </p>
                         <p><i><strong>Created:</strong>  {this.props.created_at}</i> </p>
                         <p className="card-text">{renderHTML(this.props.job_description)}</p>
-                        <p>Click to get the full Modal experience!</p>
 
 
                         <button className="btn btn-primary" onClick={this.handleShow}>View Job and apply</button>
