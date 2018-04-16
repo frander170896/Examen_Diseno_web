@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import JobList from './JobList.js';
+import axios from 'axios';
+import get_Jobs from './Jobs';
 
 class InputDate extends Component {
     constructor(props) {
@@ -228,19 +231,23 @@ class LateralFilter extends Component {
         super(props);
         this.state = {
             isfiltrado: false,
-            datos: this.props.job_list,
+            jobs: null,
             datosFiltrados: null,
             fecha: "",
             ubicacion: "",
             empresa: ""
         }
         this.handleChange = this.handleChange.bind(this);
+        this.componentDidMount = this.componentDidMount.bind(this);
+        this.handlerSubmit = this.handlerSubmit.bind(this);
+        this.filtrarSeleccion = this.filtrarSeleccion.bind(this);
     }
     filtrarSeleccion(array, valor) {
         var resultado = [];
         var i;
         for (i = 0; i < array.length; i++) {
-            if (array[i].include(valor)) {
+            if (array[i].company === valor) {
+                console.log(array[i].company);
                 resultado.push(array[i]);
             }
         }
@@ -256,19 +263,17 @@ class LateralFilter extends Component {
         if (tipo1.checked) {
             tipo = true;
         }
-        var fecha = this.state.fecha;
-        var ubicacion = this.state.ubicacion;
-        var empresa = this.state.empresa;
+        // var fecha = this.state.fecha;
+        // var ubicacion = this.state.ubicacion;
+        // var empresa = this.state.empresa;
+        var resultado = this.filtrarSeleccion(this.state.jobs, 'King');
 
-        var datos = this.state.datos;
-
-        var resultado = this.filtrarSeleccion(datos, empresa);
-
-        this.setState(() => {
-            isfiltrado: true;
+        this.setState({
+            isfiltrado: true,
             datosFiltrados: resultado
         });
-
+        alert('filtrado metodo') 
+        console.log('Handler submit'+this.state.datosFiltrados);
     }
     handleChange(event, valor) {
 
@@ -283,41 +288,74 @@ class LateralFilter extends Component {
             this.setState({
                 ubicacion: location
             });
-          //  console.log(location);
+            //  console.log(location);
         }
         else if (valor === 3) {
             var company = event.target.value;
             this.setState({
                 empresa: company
             });
-           // console.log(company);
+            // console.log(company);
         }
         event.preventDefault();
 
     }
+    cambiaEstado(data, referencia) {
 
+        referencia.setState({
+            jobs: data
+        });
+
+    }
+    componentDidMount() {
+        const prueba = get_Jobs(this.cambiaEstado, this);
+    }
     render() {
         return (
-            <form onSubmit={this.handlerSubmit}>
-                <InputDate Lnombre="Description"
-                    mPadre={this.handleChange} >
-                </InputDate>
-                <SelectUbicacion
-                    mPadre={this.handleChange}
-                    Lnombre="Location"
-                    values={this.state.datos}>
-                </SelectUbicacion>
-                <div className="custom-control custom-radio">
-                    <input type="radio" id="Radio1" value="Full-Time" name="customRadio" className="custom-control-input" checked />
-                    <label className="custom-control-label" for="customRadio1">Full-Time</label>
+            <div className="row jobs">
+                <div className="col-ms-6 col-md-3 col-lg-3" >
+                    <form onSubmit={this.handlerSubmit}>
+                        <InputDate Lnombre="Description"
+                            mPadre={this.handleChange} >
+                        </InputDate>
+                        {this.state.jobs && !this.state.isfiltrado ? <SelectUbicacion
+                            mPadre={this.handleChange}
+                            Lnombre="Location"
+                            values={this.state.jobs} />
+                            : this.state.isfiltrado && this.state.datosFiltrados ?
+                                <SelectUbicacion
+                                    mPadre={this.handleChange}
+                                    Lnombre="Location"
+                                    values={this.state.datosFiltrados} />
+                                : ''
+                        }
+                        <div className="custom-control custom-radio">
+                            <input type="radio" id="Radio1" value="Full-Time" name="customRadio" className="custom-control-input" checked />
+                            <label className="custom-control-label" for="customRadio1">Full-Time</label>
+                        </div>
+                        <div className="custom-control custom-radio">
+                            <input type="radio" id="Radio2" name="customRadio" className="custom-control-input" />
+                            <label className="custom-control-label" value="Middle-Time" for="customRadio2">Middle-Time</label>
+                        </div>
+                        <input type="submit" value="Filtrar" className="btn btn-primary" />
+                    </form>
                 </div>
-                <div className="custom-control custom-radio">
-                    <input type="radio" id="Radio2" name="customRadio" className="custom-control-input" />
-                    <label className="custom-control-label" value="Middle-Time" for="customRadio2">Middle-Time</label>
+                <div className="col-ms-6 col-md-9 col-lg-9 mt-3" >
+                <button onClick={this.handlerSubmit}> Click me</button>
+                    {!this.state.jobs && !this.state.isfiltrado ?
+                        <div className="alert alert-primary" role="alert">
+                            <i><strong>Loading...</strong></i>
+                        </div>
+                        : !this.state.isfiltrado && !this.state.datosFiltrados ?
+                        <JobList job_list={this.state.jobs} /> :
+                        this.state.datosFiltrados.map(elemento => <div key={elemento.id}>
+                            <li><p>{elemento.company}</p></li>
+                            </div>
+                        )
+                        
+                    }
                 </div>
-                <input type="submit" value="Filtrar" className="btn btn-primary"></input>
-
-            </form>
+            </div>
         );
     }
 
