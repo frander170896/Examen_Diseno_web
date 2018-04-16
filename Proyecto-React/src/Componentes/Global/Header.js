@@ -34,7 +34,7 @@ class Header extends Component {
                 {this.state.showLogin?<Login showLogin={this.state.showLogin}  visible={this.state.showLogin} />:''}
                 <div className="color_header " >
                     <nav className="navbar navbar-expand-sm navbar-light  font-weight-bold margenes-header">
-                        <img src={logoHeader} className="img-thumbnail " id="image" alt="image" />
+                        <img src={logoHeader} className="img-thumbnail mr-3" id="image" alt="image" />
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
@@ -50,12 +50,12 @@ class Header extends Component {
 
                             <a href="#" id="navbar-static-login" className="nav-link waves-effect waves-light" onClick={this.handleShowLogin}>
                                 <span className="clearfix d-none d-sm-inline-block">Log In</span>
-                                <img src={user} className="img-thumbnail imgheader" alt="login" />
+                                <img src={user} className="img-thumbnail imgheader ml-3" alt="login" />
                             </a>
                         </div>
                     </nav>
                 </div>
-                <div className="row mt-1">
+                <div className="row mt-0">
                     <img src={banner} className="img-thumbnail banner" id="imgheader" alt="header" />
                 </div>
 
