@@ -84,7 +84,11 @@ class JobList extends Component {
         this.state = {
             jobs: this.props.job_list
         }
+        this.componentDidMount=this.componentDidMount.bind(this);
         //console.log(this.state.jobs[0])
+    }
+    componentDidMount(){
+        this.setState({jobs: this.props.job_list});
     }
     render() {
         return (
