@@ -184,7 +184,7 @@ class SelectUbicacion extends Component {
         return (
             <div>
                 <label>{this.props.Lnombre}</label>
-                <select className="custom-select" onChange={(event) => { this.handleChange(event, 2) }}>
+                <select required className="custom-select" onChange={(event) => { this.handleChange(event, 2) }}>
                     <option onClick={() => { this.handlerOnChange('All') }} value='All'>All</option>
                     {this.state.datos && this.state.datos.map((item, key) =>
                         <option key={item.id}
@@ -195,7 +195,7 @@ class SelectUbicacion extends Component {
                     )}
                 </select>
                 <label>Company Name:</label>
-                <select className="custom-select" onChange={(event) => { this.handleChange(event, 3) }} >
+                <select required className="custom-select" onChange={(event) => { this.handleChange(event, 3) }} >
                     {this.state.empresas ?
                         //  <SelectEmpresa Lnombre="Empresa" values={this.state.empresas}></SelectEmpresa>                  
                         this.state.empresas.map((item2, key) =>
@@ -246,16 +246,87 @@ class LateralFilter extends Component {
         this.handlerSubmit = this.handlerSubmit.bind(this);
         this.filtrarSeleccion = this.filtrarSeleccion.bind(this);
     }
-    filtrarSeleccion(array, valor) {
+    filtrarLocalisacion(array,location){
         var resultado = [];
         var i;
         for (i = 0; i < array.length; i++) {
-            if (array[i].company === valor) {
-                console.log(array[i].company);
+            if (array[i].location == location) {
                 resultado.push(array[i]);
             }
         }
-
+        return resultado;
+    }
+    filtrarDescripcion(array,description){
+        alert("descripcion: "+description);
+        var resultado = [];
+        var i;
+        for (i = 0; i < array.length; i++) {
+            if (array[i].description.indexOf(description) != -1) {
+                resultado.push(array[i]);
+            }
+        }
+        console.log("Despues de descripcion");
+        console.log(resultado);
+        return resultado;
+    }
+    filtrarEmpresa(array,empresa){
+        var resultado = [];
+        var i;
+        alert("empresa: "+empresa);
+        
+        for (i = 0; i < array.length; i++) {
+            if (array[i].company == empresa) {
+                resultado.push(array[i]);
+            }
+        }
+        console.log("Despues de Empresa");
+        console.log(resultado);
+        return resultado;
+    }
+    filtrarTipo(array,tipo){
+        var resultado = [];
+        var temp;
+        var i;
+        for (i = 0; i < array.length; i++) {
+            if (array[i].type == tipo) {
+                resultado.push(array[i]);
+            }
+        }
+        console.log("Despues de tipo");
+        console.log(resultado);
+        return resultado;
+    }
+    
+    filtrarSeleccion(array,descripcion,empresa,ubicacion,tipo) {
+        var resultado = null;
+        alert(descripcion+","+empresa+","+ubicacion+","+tipo);
+        if(descripcion.length > 0){
+            resultado = this.filtrarDescripcion(array,descripcion);
+        }
+       /* if(ubicacion.length > 0 ){
+            if(resultado != null){
+                resultado.concat(this.filtrarLocalisacion(resultado,ubicacion));
+            }else{
+                resultado = this.filtrarLocalisacion(array,ubicacion);
+            }
+        }*/
+        if(empresa.length > 0 ){
+           
+            if(resultado != null){
+                resultado = this.filtrarEmpresa(resultado,empresa);
+            }else{
+                resultado = this.filtrarEmpresa(array,empresa);
+            }
+          
+        }
+        
+        if(resultado != null){
+            resultado =  this.filtrarTipo(resultado,tipo?"Full Time":"Middle Time");
+        }else{
+            resultado = this.filtrarTipo(array,tipo?"Full Time":"Middle Time");
+        }
+    
+       
         return resultado;
     }
 
@@ -270,14 +341,12 @@ class LateralFilter extends Component {
         // var fecha = this.state.fecha;
         // var ubicacion = this.state.ubicacion;
         // var empresa = this.state.empresa;
-        var resultado = this.filtrarSeleccion(this.state.jobs, 'King');
+        var resultado = this.filtrarSeleccion(this.state.jobs,this.state.fecha,this.state.empresa,this.state.ubicacion,tipo);
 
         this.setState({
             isfiltrado: true,
             datosFiltrados: resultado
         });
-        alert('filtrado metodo')
-        console.log('Handler submit' + this.state.datosFiltrados);
     }
     handleChange(event, valor) {
 
