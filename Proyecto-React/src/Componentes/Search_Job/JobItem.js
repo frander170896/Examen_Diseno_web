@@ -45,9 +45,13 @@ class JobItem extends Component {
                     <div className="card-body">
                         <h2 className="card-title">{this.props.jobtitle}</h2>
                         <h3 className="card-subtitle mb-2 text-muted">About the job</h3>
+                        <p> <i>
+                            <strong>Location:  </strong> {this.props.location?this.props.location:'Not especified.'}
+                            </i>
+                            </p>
                         <p>
                             <i><strong>Job Type:  </strong> {this.props.job_type}</i>
-
+                           
                         </p>
                         <p className="card-text">{this.props.created_at}</p>
                         <button className="btn btn-primary" onClick={this.handleShow}>View Job and apply</button>
