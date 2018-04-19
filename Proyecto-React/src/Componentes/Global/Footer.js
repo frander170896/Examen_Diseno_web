@@ -53,8 +53,8 @@ class Footer extends Component {
             <img src={imgFooter} className="img-thumbnail" ></img>
           </div>
           <hr />
-
-          <div className="row">
+        </div>
+        <div className="row">
             <div className="col-sm-12 col-md-12 col-lg-12">
               <div className="row">
                 <div className="offset-md-4 col-sm-1 col-md-1 col-lg-1">
@@ -81,11 +81,9 @@ class Footer extends Component {
             </div>
           </div>
           <hr />
-
           <div className="footer-copyright py-3 text-center">
             © 2018 Copyright
           </div>
-        </div>
       </div>
     );
   }
