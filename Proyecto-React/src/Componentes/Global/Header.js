@@ -9,6 +9,7 @@ import user from "./icons/usuario.png";
 import logoHeader from "./icons/reunion.png";
 import Home from "./icons/home.png";
 import Login from "../Login";
+import Carrusel from './Carrousel';
 
 
 class Header extends Component {
@@ -26,7 +27,7 @@ class Header extends Component {
         title: PropTypes.string.isRequired,
         items: PropTypes.array.isRequired
     };
-    
+
     render() {
         const { title, items } = this.props;
         return (
@@ -56,7 +57,8 @@ class Header extends Component {
                     </nav>
                 </div>
                 <div className="row mt-0">
-                    <img src={banner} className="img-thumbnail banner" id="imgheader" alt="header" />
+                
+                  <Carrusel/>
                 </div>
 
             </div>
