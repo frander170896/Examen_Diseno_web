@@ -64,7 +64,7 @@ class Register extends Component {
 
                         <div className="row">
                             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                <select className="form-control" name="province" required>
+                                <select className="form-control" id="province" name="province" required>
                                     <option value="">Select a province</option>
                                     <option value="1">San José</option>
                                     <option value="2">Alajuela</option>
