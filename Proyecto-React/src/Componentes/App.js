@@ -9,6 +9,7 @@ import Footer from './Global/Footer';
 
 // Data
 import items from './Global/Menu';
+import './Global/css/Global/content.css';
 
 class App extends Component {
   static propTypes = {
@@ -19,7 +20,7 @@ class App extends Component {
     const { children } = this.props;
 
     return (
-      <div className="App">
+      <div className="container">
         <Header
           title="Codejobs"
           items={items}

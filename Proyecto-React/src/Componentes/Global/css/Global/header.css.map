@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "AAAA,OAAO;EACL,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,KAAK;;AAEf,aAAa;EACX,gBAAgB,EAAE,OAAO;EACzB,KAAK,EAAE,OAAO;;AAGd,eAAC;EACC,KAAK,EAAE,OAAO;EACd,eAAe,EAAE,IAAI;;AAIrB,sBAAK;EACH,gBAAgB,EAAE,IAAI;EACtB,KAAK,EAAE,KAAK;;AAElB,gBAAgB;EACd,MAAM,EAAE,UAAU",
-"sources": ["../../../../../../../../Dise%C3%B1o%20Web/project-1-website-searching-jobs-delta/Proyecto-React/src/Componentes/Global/css/Global/header.sass"],
+"mappings": "AAEA,OAAO;EACL,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,KAAK;;AAEf,aAAa;EACX,gBAAgB,EAAE,OAAO;EACzB,KAAK,EAAE,OAAO;;AAGd,eAAC;EACC,KAAK,EAAE,OAAO;EACd,eAAe,EAAE,IAAI;;AAIrB,sBAAK;EACH,UAAU,EAAE,KAAK;EACjB,KAAK,EAAE,KAAK;;AAElB,gBAAgB;EACd,MAAM,EAAE,UAAU;;AAIhB,oBAAK;EACH,gBAAgB,EAAE,KAAK;;AAG3B,UAAK;EACH,UAAU,EAAE,oCAA+B;EAC3C,UAAU,EAAE,OAAO;;AAGrB,oBAAQ;EACN,UAAU,EAAE,kBAAkB;EAC9B,aAAa,EAAE,IAAI;EACnB,MAAM,EAAE,OAAO;;AAGnB,qCAAqC;EACnC,gBAAgB;IACd,MAAM,EAAE,eAAe;IACvB,OAAO,EAAE,eAAe;;EAC1B,OAAO;IACL,KAAK,EAAE,IAAI;IACX,MAAM,EAAE,KAAK",
+"sources": ["../../../../../../../../../Dise%C3%B1o%20Web/Web/project-1-website-searching-jobs-delta/Proyecto-React/src/Componentes/Global/css/Global/header.sass"],
 "names": [],
 "file": "header.css"
 }

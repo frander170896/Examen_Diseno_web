@@ -1,7 +1,7 @@
 // Dependencies
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './css/Global/content.css';
+
 // Assets
 //import './css/Content.css';
 
@@ -14,8 +14,10 @@ class Content extends Component {
     const { body } = this.props;
 
     return (
-      <div className="Content margenes-contenido">
+      <div className = "row" >
+        <div className="Content margenes-contenido">
         {body}
+      </div>
       </div>
     );
   }
