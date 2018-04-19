@@ -26,7 +26,9 @@ class App extends Component {
           items={items}
         />
         <Content body={children} />
-        <Footer />
+        <Footer
+          title="Codejobs"
+          items={items} />
       </div>
     );
   }
