@@ -12,13 +12,16 @@ import Login from "../Login";
 import Carrusel from './Carrousel';
 
 
+
+
+
 class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showLogin: false
+            showLogin: true
         };
-        this.handleShowLogin=this.handleShowLogin.bind(this);
+       this.handleShowLogin=this.handleShowLogin.bind(this);
     }
     handleShowLogin() {
         this.setState({ showLogin: true });
@@ -32,7 +35,7 @@ class Header extends Component {
         const { title, items } = this.props;
         return (
             <div>
-                {this.state.showLogin?<Login showLogin={this.state.showLogin}  visible={this.state.showLogin} />:''}
+                
                 <div className="color_header " >
                     <nav className="navbar navbar-expand-sm navbar-light  font-weight-bold margenes-header">
                         <img src={logoHeader} className="img-thumbnail mr-3" id="image" alt="image" />
@@ -48,11 +51,8 @@ class Header extends Component {
                                 )}
 
                             </ul>
-
-                            <a href="#" id="navbar-static-login" className="nav-link waves-effect waves-light" onClick={this.handleShowLogin}>
-                                <span className="clearfix d-none d-sm-inline-block">Log In</span>
-                                <img src={user} className="img-thumbnail imgheader ml-3" alt="login" />
-                            </a>
+                            {this.state.showLogin?<Login/>:''}
+                        
                         </div>
                     </nav>
                 </div>
@@ -60,7 +60,6 @@ class Header extends Component {
                 
                   <Carrusel/>
                 </div>
-
             </div>
 
         );
