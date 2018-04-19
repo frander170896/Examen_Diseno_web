@@ -1,97 +1,65 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import imgFooter from "./images/footer.jpg";
+import React, { Component }  from 'react';
 
 class Footer extends Component {
-  static propTypes = {
-    title: PropTypes.string.isRequired,
-    items: PropTypes.array.isRequired
-  };
-  render() {
-    const { title, items } = this.props;
-    return (
-      <div className="color_footer">
-        <div className="row  margenes-footer">
-          <div className="col-sm-12 col-md-4 ">
-            <h5 className="text-uppercase mb-4 mt-3 font-weight-bold">Search Job</h5>
-            <p>Search Job is the leading employment website in Latin America. It is the most visited job
-              exchange in Colombia, Peru, Argentina, Uruguay, Guatemala, Ecuador and El Salvador, and the
-              second in Honduras, Venezuela, Nicaragua, Cuba and Costa Rica. It is also present in Mexico,
-                    Chile, Panama, the Dominican Republic, Bolivia, Paraguay and Puerto Rico.</p>
+    render() {
+      return (
+        <div className="color_footer">
+          <div className="row">
+              <div className="col-md-4  margenes-footer">
+                  <h5 className="text-uppercase mb-4 mt-3 font-weight-bold">Footer Content</h5>
+                  <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit
+                    amet, consectetur adipisicing elit.</p>
+              </div>
+              <hr className="clearfix w-100 d-md-none" />
+
+              <div className="col-md-2 mx-auto">
+                <h5 className="text-uppercase mb-4 mt-3 font-weight-bold">Links</h5>
+                <ul className="list-unstyled">
+                  <li>
+                    <a href="#!">Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#!">Link 2</a>
+                  </li>
+                  <li>
+                    <a href="#!">Link 3</a>
+                  </li>
+                  <li>
+                    <a href="#!">Link 4</a>
+                  </li>
+                </ul>
+              </div>
+
+              <hr className="clearfix w-100 d-md-none"/>
+
+              <div className="col-md-2 mx-auto">
+                  <h5 className="text-uppercase mb-4 mt-3 font-weight-bold">Links</h5>
+                  <ul className="list-unstyled">
+                      <li>
+                          <a href="#!">Link 1</a>
+                      </li>
+                      <li>
+                          <a href="#!">Link 2</a>
+                      </li>
+                      <li>
+                          <a href="#!">Link 3</a>
+                      </li>
+                      <li>
+                          <a href="#!">Link 4</a>
+                      </li>
+                  </ul>
+              </div>
+
           </div>
-          <hr className="clearfix w-100 d-md-none" />
+          <hr/>
 
-          <div className="offset-md-1 col-sm-12 col-md-3 col-lg-3">
-
-            <h5 className="text-uppercase mb-4 mt-3 font-weight-bold">Menu</h5>
-            <ul className="list-unstyled ">
-              <li>
-                <a href={items[0].url}>{items[0].title}</a>
-              </li>
-              <li>
-                <a href={items[1].url}>{items[1].title}</a>
-              </li>
-              <li>
-                <a href={items[2].url}>{items[2].title}</a>
-              </li>
-              <li>
-                <a href={items[3].url}>{items[3].title}</a>
-              </li>
-              <li>
-                <a href={items[4].url}>{items[4].title}</a>
-              </li>
-            </ul>
-
-          </div>
-
-          <hr className="clearfix w-100 d-md-none" />
-
-          <div className="col-sm-12 col-md-4 col-lg-4">
-            <h5 className="text-uppercase mb-4 mt-3 font-weight-bold">Your best option</h5>
-            <img src={imgFooter} className="img-thumbnail" ></img>
-          </div>
-
-        </div>
-        <hr />
-
-        <div className="row">
-          <div className="col-sm-12 col-md-12 col-lg-12">
-            <div className="row">
-              <div className="offset-md-4 col-sm-1 col-md-1 col-lg-1">
-                <a class="btn btn-block btn-social  btn-twitter ">
-                  <span class="fa fa-twitter"> </ span> 
-                </a>
-              </div>
-              <div className="col-sm-1 col-md-1 col-lg-1">
-                <a class="btn btn-block btn-social  btn-facebook ">
-                  <span class="fa fa-facebook"> </ span> 
-                </a>
-              </div>
-              <div className="col-sm-1 col-md-1 col-lg-1">
-                <a class="btn btn-block btn-social  btn-github ">
-                  <span class="fa fa-github"> </ span> 
-                </a>
-              </div>
-              <div className="col-sm-1 col-md-1 col-lg-1">
-                <a class="btn btn-block btn-social  btn-linkedin ">
-                  <span class="fa fa-linkedin"> </ span> 
-                </a>
-              </div>
-            </div>
-            
-          
+          <div className="footer-copyright py-3 text-center">
+            © 2018 Copyright
           </div>
         </div>
-        <hr />
 
-        <div className="footer-copyright py-3 text-center">
-          © 2018 Copyright
-          </div>
-      </div>
-
-    );
-  }
+      );
+    }
 }
 
 export default Footer;
