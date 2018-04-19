@@ -17,25 +17,21 @@
 .margenes-header {
   margin: auto 200px; }
 
-.clearfix{
-  margin-right: 10px;
-}
+.clearfix {
+  margin-right: 10px; }
 
-.btn-link{
+.btn-link {
   color: #ffffff;
   cursor: pointer;
-  text-decoration: none;
-}
+  text-decoration: none; }
 
-.btn-link:hover{
-  color: #ffffff;
-  cursor: pointer;
+.btn-link:hover {
   font-weight: bold;
-  text-decoration: none;
-}
+  color: #ffffff;
+  cursor: pointer;
+  text-decoration: none; }
 
-.btn-link:active, .btn-link:visited, .btn-link:link{
-  text-decoration: none;
-}
+.btn-link:active, .btn-link:visited, .btn-link:link {
+  text-decoration: none; }
 
 /*# sourceMappingURL=header.css.map */

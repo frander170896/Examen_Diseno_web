@@ -1,36 +1,36 @@
 // Dependencies
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import user from "../Global/icons/usuario.png";
+import Modal from 'react-bootstrap4-modal';
+import Popover from 'react-bootstrap/lib/Popover';
+import Tooltip from 'react-bootstrap/lib/Tooltip';
+import OverlayTrigger from 'react-bootstrap/lib/OverlayTrigger';
+import Button from 'react-bootstrap/lib/Button';
+import renderHTML from 'react-render-html';
 
-class Login extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      modal: false
-    };
+class Login extends Component {
+    constructor(props, context) {
+        super(props, context);
+        this.state = {
+            showLogin: this.props.showLogin
+        };
 
-    this.toggle = this.toggle.bind(this);
-  }
+        this.hideModal = this.hideModal.bind(this);
+    }
+    hideModal() {
+        this.setState({
+            showLogin: false
+        });
+    }
 
-  toggle() {
-    this.setState({
-      modal: !this.state.modal
-    });
-  }
+    render() {
 
-  render() {
-    return (
-      <div>
-        <a href="#" id="navbar-static-login" className="nav-link waves-effect waves-light" onClick={this.toggle}>
-                                <span className="clearfix d-none d-sm-inline-block">Log In</span>
-                                <img src={user} className="img-thumbnail imgheader ml-3" alt="login" />
-                            </a>
-        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-          <ModalHeader toggle={this.toggle}>Login</ModalHeader>
-          <ModalBody>
-          <div className="row">
+        return (
+                <Modal visible={this.state.showLogin} onClickBackdrop={this.hideModal} dialogClassName="modal-md">
+                    <div className="modal-header">
+                        <h5 className="modal-title">Login</h5>
+                    </div>
+                    <div className="modal-body">
+                        <div className="row">
                         <div className="col-md-1"></div>
                             <div className="card border-dark col-md-10">
                                 <div className="card-header h2">Login</div>
@@ -61,16 +61,12 @@ class Login extends React.Component {
                             </div>
                              <div className="col-md-1"></div>
                         </div>
-          </ModalBody>
-          <ModalFooter>
-            <Button color="secondary" onClick={this.toggle}>Close</Button>
-          </ModalFooter>
-        </Modal>
-      </div>
-    );
-  }
+                    </div>
+                    <div className="modal-footer">
+                        <button type="button" class="btn btn-secondary" onClick={this.hideModal}>Close</button>
+                    </div>
+                </Modal>
+                );
+    }
 }
-
-
-
 export default Login;
