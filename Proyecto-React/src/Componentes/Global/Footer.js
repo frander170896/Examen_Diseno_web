@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import imgFooter from "./images/footer.jpg";
 
 class Footer extends Component {
-  
+
   static propTypes = {
     title: PropTypes.string.isRequired,
     items: PropTypes.array.isRequired
@@ -25,7 +25,7 @@ class Footer extends Component {
 
           <div className="offset-md-1 col-sm-12 col-md-3 col-lg-3">
 
-              <hr className="clearfix w-100 d-md-none"/>
+            <hr className="clearfix w-100 d-md-none" />
             <h5 className="text-uppercase mb-4 mt-3 font-weight-bold">Menu</h5>
             <ul className="list-unstyled ">
               <li>
@@ -52,45 +52,43 @@ class Footer extends Component {
             <h5 className="text-uppercase mb-4 mt-3 font-weight-bold">Your best option</h5>
             <img src={imgFooter} className="img-thumbnail" ></img>
           </div>
-          <hr/>
+          <hr />
 
-        <div className="row">
-          <div className="col-sm-12 col-md-12 col-lg-12">
-            <div className="row">
-              <div className="offset-md-4 col-sm-1 col-md-1 col-lg-1">
-                <a class="btn btn-block btn-social  btn-twitter ">
-                  <span class="fa fa-twitter"> </ span> 
-                </a>
-              </div>
-              <div className="col-sm-1 col-md-1 col-lg-1">
-                <a class="btn btn-block btn-social  btn-facebook ">
-                  <span class="fa fa-facebook"> </ span> 
-                </a>
-              </div>
-              <div className="col-sm-1 col-md-1 col-lg-1">
-                <a class="btn btn-block btn-social  btn-github ">
-                  <span class="fa fa-github"> </ span> 
-                </a>
-              </div>
-              <div className="col-sm-1 col-md-1 col-lg-1">
-                <a class="btn btn-block btn-social  btn-linkedin ">
-                  <span class="fa fa-linkedin"> </ span> 
-                </a>
+          <div className="row">
+            <div className="col-sm-12 col-md-12 col-lg-12">
+              <div className="row">
+                <div className="offset-md-4 col-sm-1 col-md-1 col-lg-1">
+                  <a class="btn btn-block btn-social  btn-twitter ">
+                    <span class="fa fa-twitter"> </ span>
+                  </a>
+                </div>
+                <div className="col-sm-1 col-md-1 col-lg-1">
+                  <a class="btn btn-block btn-social  btn-facebook ">
+                    <span class="fa fa-facebook"> </ span>
+                  </a>
+                </div>
+                <div className="col-sm-1 col-md-1 col-lg-1">
+                  <a class="btn btn-block btn-social  btn-github ">
+                    <span class="fa fa-github"> </ span>
+                  </a>
+                </div>
+                <div className="col-sm-1 col-md-1 col-lg-1">
+                  <a class="btn btn-block btn-social  btn-linkedin ">
+                    <span class="fa fa-linkedin"> </ span>
+                  </a>
+                </div>
               </div>
             </div>
-            
-          
+          </div>
+          <hr />
+
+          <div className="footer-copyright py-3 text-center">
+            © 2018 Copyright
           </div>
         </div>
-        <hr />
-
-        <div className="footer-copyright py-3 text-center">
-          © 2018 Copyright
-          </div>
       </div>
-  </div>
-      );
-    }
+    );
+  }
 }
 
 export default Footer;
