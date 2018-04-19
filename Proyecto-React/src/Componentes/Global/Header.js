@@ -16,7 +16,7 @@ class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showLogin: false
+            showLogin: true
         };
         this.handleShowLogin=this.handleShowLogin.bind(this);
     }
@@ -48,11 +48,6 @@ class Header extends Component {
 
                             </ul>
                             {this.state.showLogin?<Login/>:''}
-
-                            <a href="#" id="navbar-static-login" className="nav-link waves-effect waves-light" onClick={this.handleShowLogin}>
-                                <span className="clearfix d-none d-sm-inline-block">Log In</span>
-                                <img src={user} className="img-thumbnail imgheader ml-3" alt="login" />
-                            </a>
                         </div>
                     </nav>
                 </div>
