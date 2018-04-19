@@ -33,15 +33,11 @@ input, select {
   background-color: #383CA3; }
 
 .register form {
-  margin-top: 15px;
-  margin-left: 27%;
-  width: 48%; }
+  margin-top: 15px; }
   .register form input, .register form #province, .register form .custom-file-label {
     height: 32px;
     border-radius: 0px;
     border: 1px solid #ccc; }
-  .register form #province {
-    padding-left: 35%; }
 
 .register img {
   height: 200px;
