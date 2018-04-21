@@ -32,7 +32,7 @@ class Header extends Component {
         const { title, items } = this.props;
         return (
             <div>
-                <div className="color_header " >
+                <div className="color_header navbar-fixed-top" >
                     <nav className="navbar navbar-expand-sm navbar-light  font-weight-bold margenes-header">
                         <img src={logoHeader} className="img-thumbnail mr-3" id="image" alt="image" />
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
