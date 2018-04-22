@@ -1,6 +1,10 @@
 /*search_job.sass */
 .img-company {
-  width: 15%;
-  height: 15%; }
+  width: 90%;
+  height: 90%; }
+
+.card-company {
+  width: 30%;
+  height: 30%; }
 
 /*# sourceMappingURL=search_job.css.map */

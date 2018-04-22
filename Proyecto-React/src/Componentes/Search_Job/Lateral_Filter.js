@@ -6,6 +6,7 @@ import { render } from 'react-dom';
 import get_Jobs from './Jobs';
 import JobItem from './JobItem';
 import Lupa from '../Global/icons/lupa.png';
+
 import '../Global/css/Search_Job/search_job.css';
 
 
@@ -100,8 +101,8 @@ class LateralFilter extends Component {
                     datosFiltrados: resultado
                 });
             } else {
-                
-                var llocation = this.filtrarLocalizacion(this.state.jobs,ubicacion);
+
+                var llocation = this.filtrarLocalizacion(this.state.jobs, ubicacion);
                 this.setState({
                     isfiltrado: true,
                     datosFiltrados: llocation
@@ -218,12 +219,12 @@ class LateralFilter extends Component {
             <div>
                 <div className="row">
                     <div className="col-ms-6 col-md-3 col-lg-12 text-center">
-                        <h2>Available Jobs</h2>
+                        <h3>Available Jobs</h3>
                     </div>
                 </div>
                 <div className="row jobs">
-                    <div className="col-ms-6 col-md-3 col-lg-3" >
-                        <h3>Filtering Jobs</h3>
+                    <div className="col-ms-8 col-md-3 col-lg-4" >
+                        <h4>Filtering Jobs</h4>
                         <form onSubmit={this.handlerSubmit}>
                             {this.state.listaLocations ?
                                 <div>
@@ -266,11 +267,15 @@ class LateralFilter extends Component {
 
                                 </div> : <p>Downloading jobs...</p>
                             }
-                            <input type="submit" value="Filtrar" className="btn btn-primary" />
+                            <button type="submit" className="btn btn-primary btn-sm active">
+                                <img className='mr-3 ml-3' src={Lupa} />
+                                Filter
+                            </button>
+
                         </form>
 
                     </div>
-                    <div className="col-ms-6 col-md-9 col-lg-9 mt-2" >
+                    <div className="col-ms-4 col-md-9 col-lg-8 mt-2" >
                         <div className="input-group-prepend m-3">
                             <span className="input-group-text" id="inputGroup-sizing-default">
                                 <img src={Lupa} />
