@@ -33,17 +33,16 @@ class Header extends Component {
         return (
             <div>
                 <div className="color_header navbar-fixed-top " >
-                    <nav className="navbar navbar-expand-sm navbar-light font-weight-bold margenes-header">
-                       
-                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
+                    <nav className="navbar navbar-expand-sm navbar-light  font-weight-bold margenes-header">
                         <a className="navbar-brand" href={items[0].url}>
                             <img src={logoHeader} width="30" height="30" alt="Logo" />
                         </a>
-                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
 
-                            <ul className="navbar-nav">
+                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul className="navbar-nav mr-auto negro">
                                 {items && items.map((item, key) => {
                                     if (key === 0)
                                         return <li className='nav-item' key={key}><Link className='btn active' to={item.url}>{item.title}</Link></li>
@@ -51,14 +50,11 @@ class Header extends Component {
                                     return <li className='nav-item' key={key}><Link className='btn' to={item.url}>{item.title}</Link></li>
                                 }
                                 )}
-
+                                <li className="nav-item" >{this.state.showLogin ? <Login /> : ''}</li>
                             </ul>
-                            <div className="form-inline">
-                                <ul className="navbar-nav">
-                                    <li className="nav-item " >{this.state.showLogin ? <Login /> : ''}</li>
-                                </ul>
-                            </div>
+
                         </div>
+                        
                     </nav>
                 </div>
                 <div className="row mt-0">
