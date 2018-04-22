@@ -356,13 +356,13 @@ class LateralFilter extends Component {
         return (
             <div>
                 <div className="row">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-default">
+                    <div className="input-group mb-3">
+                        <div className="input-group-prepend">
+                            <span className="input-group-text" id="inputGroup-sizing-default">
                                 <img src={Lupa} />
                             </span>
                         </div>
-                        <input class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type="text"
+                        <input className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type="text"
                             placeholder="Search" onChange={this.filterList} />
                     </div>
                 </div>

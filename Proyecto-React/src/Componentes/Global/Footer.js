@@ -55,23 +55,23 @@ class Footer extends Component {
         <hr className="clearfix w-100 d-md-none" />
             <div className="row">
               <div className="offset-md-4 offset-sm-4 offset-lg-4 col-sm-1 col-md-1 col-lg-1">
-                <a class="btn btn-block btn-social  btn-twitter ">
-                  <span class="fa fa-twitter"> </ span>
+                <a className="btn btn-block btn-social  btn-twitter ">
+                  <span className="fa fa-twitter"> </span>
                 </a>
               </div>
               <div className="col-sm-1 col-md-1 col-lg-1">
-                <a class="btn btn-block btn-social  btn-facebook ">
-                  <span class="fa fa-facebook"> </ span>
+                <a className="btn btn-block btn-social  btn-facebook ">
+                  <span className="fa fa-facebook"> </span>
                 </a>
               </div>
               <div className="col-sm-1 col-md-1 col-lg-1">
-                <a class="btn btn-block btn-social  btn-github ">
-                  <span class="fa fa-github"> </ span>
+                <a className="btn btn-block btn-social  btn-github ">
+                  <span className="fa fa-github"> </span>
                 </a>
               </div>
               <div className="col-sm-1 col-md-1 col-lg-1">
-                <a class="btn btn-block btn-social  btn-linkedin ">
-                  <span class="fa fa-linkedin"> </ span>
+                <a className="btn btn-block btn-social  btn-linkedin ">
+                  <span className="fa fa-linkedin"> </span>
                 </a>
               </div>
             </div>

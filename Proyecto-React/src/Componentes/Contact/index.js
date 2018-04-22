@@ -13,17 +13,17 @@ class Contact extends Component {
                         <div className="card-body text-dark">
                             <p className="card-text">Thank you for using this product. Please, complete the form below, so we can provide quick and efficient service.</p>
                             <form>
-                                <div class="form-group">
-                                    <label className="sr-only" for="name">Name</label>
+                                <div className="form-group">
+                                    <label className="sr-only" htmlFor="name">Name</label>
                                     <div className="input-group mb-2">
                                         <div className="input-group-prepend">
                                             <div className="input-group-text fa fa-user"></div>
                                         </div>
-                                        <input type="text" class="form-control" id="name" placeholder="Name"/>
+                                        <input type="text" className="form-control" id="name" placeholder="Name"/>
                                     </div>
                                 </div>
                                 <div className="form-group">
-                                    <label className="sr-only" for="phone">Phone</label>
+                                    <label className="sr-only" htmlFor="phone">Phone</label>
                                     <div className="input-group mb-2">
                                         <div className="input-group-prepend">
                                             <div className="input-group-text fa fa-phone"></div>
@@ -32,7 +32,7 @@ class Contact extends Component {
                                     </div>
                                 </div>
                                 <div className="form-group">
-                                    <label className="sr-only" for="email">Email</label>
+                                    <label className="sr-only" htmlFor="email">Email</label>
                                     <div className="input-group mb-2">
                                         <div className="input-group-prepend">
                                             <div className="input-group-text">@</div>

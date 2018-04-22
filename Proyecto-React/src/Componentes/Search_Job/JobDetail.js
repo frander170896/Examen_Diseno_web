@@ -47,7 +47,7 @@ class JobDetail extends Component {
                     </div>
                     <div className="modal-footer">
                         <a className='active btn btn-link'>{renderHTML(this.state.how_to_apply)}</a>
-                        <button type="button" class="btn btn-secondary" onClick={this.hideModal}>Close</button>
+                        <button type="button" className="btn btn-secondary" onClick={this.hideModal}>Close</button>
                     </div>
                 </Modal>
                 );

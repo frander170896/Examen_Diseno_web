@@ -28,11 +28,11 @@ class Register extends Component {
                                 <div className="row">
                                     <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-right">
                                         <input type="radio" id="male" name="gender"/>
-                                        <label for="male"><span></span>Male</label>
+                                        <label htmlFor="male"><span></span>Male</label>
                                     </div>
                                     <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-left">
                                         <input type="radio" id="female" name="gender"/>
-                                        <label for="female"><span></span>Female</label>
+                                        <label htmlFor="female"><span></span>Female</label>
                                     </div>
                                 </div>
 
@@ -79,7 +79,7 @@ class Register extends Component {
                                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                         <div className="custom-file">
                                             <input type="file" className="custom-file-input" name="file" required/>
-                                            <label className="custom-file-label" for="customFile">Attach CV</label>
+                                            <label className="custom-file-label" htmlFor="customFile">Attach CV</label>
                                         </div>
                                     </div>
                                 </div>
