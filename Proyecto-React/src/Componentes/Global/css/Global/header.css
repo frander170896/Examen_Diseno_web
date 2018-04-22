@@ -13,9 +13,14 @@
 .color_header ul li:hover {
   background-color: #2C2f7C;
   color: #ffffff;
-  border-radius: 10px; }
+  border-radius: 5px; }
   .color_header ul li:hover a {
     color: #ffffff; }
+.color_header ul li a.active {
+  background-color: #2C2f7C;
+  color: #ffffff; }
+.color_header ul li a.btn:hover {
+  color: #ffffff; }
 
 .margenes-header {
   margin: auto 200px; }
