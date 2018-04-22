@@ -19,7 +19,7 @@ class Contact extends Component {
                                         <div className="input-group-prepend">
                                             <div className="input-group-text fa fa-user"></div>
                                         </div>
-                                        <input type="text" className="form-control" id="name" placeholder="Name"/>
+                                        <input type="text" className="form-control" id="name" placeholder="Name" required/>
                                     </div>
                                 </div>
                                 <div className="form-group">
@@ -28,7 +28,7 @@ class Contact extends Component {
                                         <div className="input-group-prepend">
                                             <div className="input-group-text fa fa-phone"></div>
                                         </div>
-                                        <input type="text" className="form-control" id="phone" placeholder="Phone"/>
+                                        <input type="text" className="form-control" id="phone" placeholder="Phone" required/>
                                     </div>
                                 </div>
                                 <div className="form-group">
@@ -37,14 +37,14 @@ class Contact extends Component {
                                         <div className="input-group-prepend">
                                             <div className="input-group-text">@</div>
                                         </div>
-                                        <input type="email" className="form-control" id="email" placeholder="Email"/>
+                                        <input type="email" className="form-control" id="email" placeholder="Email" required/>
                                     </div>
                                 </div>
                                 <button type="submit" className="btn btn-primary mb-2">Send</button>
                             </form>
                         </div>
                     </div>
-                    <div className="col-md-3"></div> 
+                    <div className="col-md-3"></div>
                 </div>
                 );
     }
