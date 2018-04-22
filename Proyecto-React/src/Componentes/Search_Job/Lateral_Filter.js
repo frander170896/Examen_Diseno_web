@@ -6,7 +6,7 @@ import { render } from 'react-dom';
 import get_Jobs from './Jobs';
 import JobItem from './JobItem';
 import Lupa from '../Global/icons/lupa.png';
-
+import '../Global/css/Search_Job/search_job.css';
 
 class InputDate extends Component {
     constructor(props) {

@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": ";AACA,YAAY;EAER,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,GAAG",
+"sources": ["search_job.sass"],
 "names": [],
 "file": "search_job.css"
 }

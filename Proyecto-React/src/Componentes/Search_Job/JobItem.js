@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import JobDetail from './JobDetail';
+
+import Company from "../Global/icons/home.png";
+
 class CompanyLogo extends Component {
     render() {
         return (
-            <img src={this.props.company_logo} className="img-thumbnail" alt="company" />
+            <img src={this.props.company_logo?this.props.company_logo:Company} className="img-thumbnail img-company" alt="company" />
         );
     }
 }
