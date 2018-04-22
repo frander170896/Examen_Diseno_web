@@ -27,7 +27,7 @@ class Login extends React.Component {
                                 <span className="clearfix d-none d-sm-inline-block text-light">Log In</span>
                                 <img src={user} className="img-thumbnail imgheader ml-3" alt="login" />
                             </a>
-        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className + ' modal-dialog-centered-y'}>
           <ModalHeader toggle={this.toggle}>Login</ModalHeader>
           <ModalBody>
           <div className="row">
