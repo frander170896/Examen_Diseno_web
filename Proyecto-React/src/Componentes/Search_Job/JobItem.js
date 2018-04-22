@@ -15,7 +15,7 @@ class CompanyLogo extends Component {
 class ApplyLink extends Component {
     render() {
         return (
-            <a className='active btn btn-link' target="_blank" href={this.props.company_url}>
+            <a className='active btn btn-link text-white' target="_blank" href={this.props.company_url}>
                 {this.props.action_name}
             </a>
         );
@@ -68,8 +68,8 @@ class JobItem extends Component {
                     <div className="col-sm-9 ">
                         <div className="card bg-info">
                             <div className="card-body">
-                                <h3 className="card-title">{this.props.jobtitle}</h3>
-                                <h4 className="card-subtitle mb-2 text-muted">About the job</h4>
+                                <h4 className="card-title">{this.props.jobtitle}</h4>
+                                <h5 className="card-subtitle mb-2 text-muted">About the job</h5>
                                 <p> <i>
                                     <strong>Location:  </strong> {this.props.location ? this.props.location : 'Not especified.'}
                                 </i>
@@ -77,7 +77,10 @@ class JobItem extends Component {
                                 <p>
                                     <i><strong>Job Type:  </strong> {this.props.job_type}</i>
                                 </p>
-                                <p className="card-text">{this.props.created_at}</p>
+                                <p className="card-text">
+                                <i><strong>Last Modified:  </strong> {this.props.created_at}</i>
+                                
+                                </p>
                                 <button className="btn btn-secondary btn-sm active" 
                                 onClick={this.handleShow}>
                                 <img src={Mensaje}/>
