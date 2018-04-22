@@ -65,4 +65,9 @@ input[type="radio"] + label span {
 input[type="radio"]:checked + label span {
   background: url(http://webdesigntutsplus.s3.amazonaws.com/tuts/391_checkboxes/check_radio_sheet.png) -57px top no-repeat; }
 
+img {
+  float: right;
+  hspace: 5;
+  vspace: 5; }
+
 /*# sourceMappingURL=register.css.map */
