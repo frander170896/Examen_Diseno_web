@@ -32,7 +32,7 @@ class JobDetail extends Component {
     render() {
 
         return (
-                <Modal visible={this.state.show} onClickBackdrop={this.hideModal} dialogClassName="modal-lg">
+                <Modal visible={this.state.show} onClickBackdrop={this.hideModal} dialogClassName="modal-lg modal-dialog-job-centered-y">
                     <div className="modal-header">
                         <h5 className="modal-title">Job Name: {this.state.jobtitle}</h5>
                     </div>

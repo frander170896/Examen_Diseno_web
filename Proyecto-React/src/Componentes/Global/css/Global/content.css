@@ -7,6 +7,9 @@ body {
 .modal-dialog-centered-y {
   margin-top: 9em; }
 
+.modal-dialog-job-centered-y {
+  margin-top: 20em !important; }
+
 .margenes-contenido {
   padding: 15px 200px 18px 200px;
   width: 100%; }
