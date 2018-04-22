@@ -10,9 +10,12 @@
   color: #ffffff;
   text-decoration: none; }
 
-.color_header li hover {
-  background-color: #555;
-  color: white; }
+.color_header ul li:hover {
+  background-color: #2C2f7C;
+  color: #ffffff;
+  border-radius: 10px; }
+  .color_header ul li:hover a {
+    color: #ffffff; }
 
 .margenes-header {
   margin: auto 200px; }
