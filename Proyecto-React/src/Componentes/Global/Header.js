@@ -42,15 +42,19 @@ class Header extends Component {
 
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav mr-auto negro">
-                                {items && items.map(
-                                    (item, key) => <li className='nav-item' key={key}><Link className='btn ' to={item.url}>{item.title}</Link></li>
+                                {items && items.map((item, key) =>{ 
+                                    if(key === 0) 
+                                        return <li className='nav-item' key={key}><Link className='btn active' to={item.url}>{item.title}</Link></li>
+                                   
+                                    return <li className='nav-item' key={key}><Link className='btn' to={item.url}>{item.title}</Link></li>
+                                    }
                                 )}
 
                             </ul>
 
                         </div>
-                        <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
-                            <ul class="navbar-nav ">
+                        <div className="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+                            <ul className="navbar-nav ">
                                 <li className="nav-item " >{this.state.showLogin ? <Login /> : ''}</li>
                             </ul>
                         </div>

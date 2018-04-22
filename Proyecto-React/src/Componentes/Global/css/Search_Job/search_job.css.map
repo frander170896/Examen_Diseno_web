@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": ";AACA,YAAY;EAER,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,GAAG",
+"mappings": ";AACA,YAAY;EAER,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;;AACjB,aAAa;EAET,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,GAAG",
 "sources": ["search_job.sass"],
 "names": [],
 "file": "search_job.css"
