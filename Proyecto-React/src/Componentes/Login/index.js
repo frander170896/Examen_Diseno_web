@@ -24,7 +24,7 @@ class Login extends React.Component {
     return (
       <div>
         <a href="#" id="navbar-static-login" className="nav-link waves-effect waves-light" onClick={this.toggle}>
-                                <span className="clearfix d-none d-sm-inline-block">Log In</span>
+                                <span className="clearfix d-none d-sm-inline-block text-light">Log In</span>
                                 <img src={user} className="img-thumbnail imgheader ml-3" alt="login" />
                             </a>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>

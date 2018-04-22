@@ -18,7 +18,7 @@ class Header extends Component {
         this.state = {
             showLogin: true
         };
-        this.handleShowLogin=this.handleShowLogin.bind(this);
+        this.handleShowLogin = this.handleShowLogin.bind(this);
     }
     handleShowLogin() {
         this.setState({ showLogin: true });
@@ -47,13 +47,18 @@ class Header extends Component {
                                 )}
 
                             </ul>
-                            {this.state.showLogin?<Login/>:''}
+
+                        </div>
+                        <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+                            <ul class="navbar-nav ">
+                                <li className="nav-item " >{this.state.showLogin ? <Login /> : ''}</li>
+                            </ul>
                         </div>
                     </nav>
                 </div>
                 <div className="row mt-0">
-                
-                  <Carrusel/>
+
+                    <Carrusel />
                 </div>
 
             </div>
