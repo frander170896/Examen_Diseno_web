@@ -63,7 +63,7 @@ class Carrusel extends React.Component {
                     src={slide1}
                   />
                   <div className="carousel-caption">
-                    Image
+                    - The best website to find a job - 
                   </div>
                 </div>
                 <div style={{height:300}}>
@@ -72,7 +72,7 @@ class Carrusel extends React.Component {
                     src={slide2}
                   />
                   <div className="carousel-caption">
-                    Image
+                    - Highly qualified jobs -
                   </div>
                 </div>
                 <div style={{height:300}}>
@@ -81,7 +81,7 @@ class Carrusel extends React.Component {
                     src={slide3}
                   />
                   <div className="carousel-caption">
-                    Image
+                    - Globally recognized companies -
                   </div>
                 </div>
                 <div style={{height:300}}>
@@ -90,7 +90,7 @@ class Carrusel extends React.Component {
                     src={slide4}
                   />
                   <div className="carousel-caption">
-                    Image
+                    - Get the best results -
                   </div>
                 </div>
                 <div style={{height:300}}>
@@ -99,11 +99,9 @@ class Carrusel extends React.Component {
                     src={slide5}
                   />
                   <div className="carousel-caption">
-                    Image
+                    - Here you can find all types of jobs -
                   </div>
                 </div>
-
-
               </React_Bootstrap_Carousel>
             </div>
           </div>
@@ -111,4 +109,5 @@ class Carrusel extends React.Component {
       );
     }
 };
+
 export default Carrusel;
