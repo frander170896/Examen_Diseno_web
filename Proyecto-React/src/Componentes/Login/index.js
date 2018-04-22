@@ -24,7 +24,7 @@ class Login extends React.Component {
     return (
       <div>
         <a href="#" id="navbar-static-login" className="nav-link waves-effect waves-light" onClick={this.toggle}>
-                                <span className="clearfix d-none d-sm-inline-block text-light">Log In</span>
+                                <span className="mt-3 clearfix d-none d-sm-inline-block text-light">Log In</span>
                                 <img src={user} className="img-thumbnail imgheader ml-3" alt="login" />
                             </a>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className + ' modal-dialog-centered-y'}>
@@ -37,7 +37,7 @@ class Login extends React.Component {
                                 <div className="card-body text-dark">
                                     <form>
                                     <div className="form-group">
-                                            <label className="sr-only" for="email">Email</label>
+                                            <label className="sr-only" >Email</label>
                                             <div className="input-group mb-2">
                                                 <div className="input-group-prepend">
                                                     <div className="input-group-text">@</div>
@@ -45,13 +45,13 @@ class Login extends React.Component {
                                                 <input type="email" className="form-control" id="email" placeholder="Email"/>
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label className="sr-only" for="password">Password</label>
+                                        <div className="form-group">
+                                            <label className="sr-only">Password</label>
                                             <div className="input-group mb-2">
                                                 <div className="input-group-prepend">
                                                     <div className="input-group-text fa fa-user"></div>
                                                 </div>
-                                                <input type="password" class="form-control" id="password" placeholder="Password"/>
+                                                <input type="password" className="form-control" id="password" placeholder="Password"/>
                                             </div>
                                         </div>
                                         <a className="btn btn-primary mb-2" href="search">Login</a>
