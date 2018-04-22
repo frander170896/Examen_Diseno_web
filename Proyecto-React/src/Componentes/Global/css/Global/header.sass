@@ -1,7 +1,7 @@
 //Variables
 $blanco: #ffffff
 $azul_oscuro: #2C2f7C
-
+$azul_claro: #383CA3
 
 
 .banner
@@ -9,7 +9,7 @@ $azul_oscuro: #2C2f7C
   height: 300px
 
 .color_header
-  background-color: #383CA3
+  background-color: $azul_claro
   color: $blanco
 
 .color_header
@@ -22,8 +22,14 @@ $azul_oscuro: #2C2f7C
     li:hover
       background-color: $azul_oscuro
       color: $blanco
-      border-radius: 10px
+      border-radius: 5px
       a 
+        color:  $blanco
+    li
+      a.active
+        background-color: $azul_oscuro
+        color:  $blanco
+      a.btn:hover
         color:  $blanco
 
 .margenes-header
