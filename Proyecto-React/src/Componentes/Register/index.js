@@ -5,6 +5,9 @@ import '../Global/css/Register/register.css';
 //import '../Global/css/Global/content.css';
 
 class Register extends Component {
+    componentWillMount() {
+        document.title = 'Register'
+    }
     render() {
         return (
 

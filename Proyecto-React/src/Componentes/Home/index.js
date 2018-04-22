@@ -4,6 +4,9 @@ import CardGroup from './CardGroup';
 
 
 class Home extends Component {
+    componentWillMount() {
+        document.title = 'Home'
+    }
   render() {
     return (
       <div className="Home">

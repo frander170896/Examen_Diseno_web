@@ -7,6 +7,9 @@ class Search extends Component {
 
 
     }
+    componentWillMount() {
+        document.title = 'Search Job'
+    }
     render() {
         return (
             <div className="container">
