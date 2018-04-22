@@ -13,7 +13,7 @@ class Card extends Component {
   }
   render() {
     return (
-      <div className="card">
+      <div className="card m-3">
         <div className="card-body">
           <h5 className="card-title">{this.state.company_name}</h5>
           <p className="card-text">
@@ -24,7 +24,7 @@ class Card extends Component {
         <div className="card-footer">
           <small className="text-muted">
 
-            <a className='btn btn-primary' href={this.state.company_url}> Visit us
+            <a className='btn btn-primary' target="_blank" href={this.state.company_url}> Visit us
               <img className="rounded" src={Visita} alt="Card image cap" />
             </a>
           </small>
@@ -44,7 +44,7 @@ class CardGroup extends Component {
   }
   render() {
     return (
-      <div className="card-group">
+      <div className="card-group p-3">
 
         <Card
           company_name={'Microsft'}
@@ -52,9 +52,9 @@ class CardGroup extends Component {
           company_url={'https://www.microsoft.com'}
         />
         <Card
-          company_name={'King'}
-          company_logo={'http://github-jobs.s3.amazonaws.com/da654754-3e79-11e8-9f35-642e887b6c66.png'}
-          company_url={'https://king.com/'}
+          company_name={'Apple'}
+          company_logo={'http://github-jobs.s3.amazonaws.com/26029982-44ba-11e8-8daf-6b1d47e5d047.jpeg'}
+          company_url={'https://www.apple.com/'}
         />
         <Card
           company_name={'Bolt Labs'}
