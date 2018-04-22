@@ -356,19 +356,14 @@ class LateralFilter extends Component {
         return (
             <div>
                 <div className="row">
-                    <div className="input-group mb-3">
-                        <div className="input-group-prepend">
-                            <span className="input-group-text" id="inputGroup-sizing-default">
-                                <img src={Lupa} />
-                            </span>
-                        </div>
-                        <input className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type="text"
-                            placeholder="Search" onChange={this.filterList} />
+                    <div className="col-ms-6 col-md-3 col-lg-12 text-center">
+                        <h2>Available Jobs</h2>
+                       
                     </div>
                 </div>
                 <div className="row jobs">
                     <div className="col-ms-6 col-md-3 col-lg-3" >
-                    <h4>Fitering Jobs</h4>
+                    
                         <form onSubmit={this.handlerSubmit}>
                          
                             {this.state.jobs && !this.state.isfiltrado ? <SelectUbicacion
@@ -396,9 +391,18 @@ class LateralFilter extends Component {
                         </form>
 
                     </div>
-                    <div className="col-ms-6 col-md-9 col-lg-9 mt-3" >
+                    <div className="col-ms-6 col-md-9 col-lg-9 mt-2" >
+                    <div className="input-group-prepend m-3">
+                            <span className="input-group-text" id="inputGroup-sizing-default">
+                                <img src={Lupa} />
+                            </span>
+                            <input className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type="text"
+                            placeholder="Search" onChange={this.filterList} />
+                        </div>
+                       <p>
+                           <small> <i className='m-3 b-2'>Job's List:</i></small>
 
-                        <h5 className='m-3 b-2'>Available Jobs:</h5>
+                       </p>
                         {!this.state.jobs && !this.state.isfiltrado ?
                             <div className="alert alert-primary" role="alert">
                                 <i><strong>Loading...</strong></i>
