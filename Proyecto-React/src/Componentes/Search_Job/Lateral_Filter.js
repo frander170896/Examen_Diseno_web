@@ -19,8 +19,8 @@ class LateralFilter extends Component {
             datosFiltrados: null,
             listaLocations: null,
             listaEmpresas: null,
-            location: '',
-            company: ''
+            location: 'All',
+            company: 'All'
         }
         //this.handleChange = this.handleChange.bind(this);
         this.componentDidMount = this.componentDidMount.bind(this);
@@ -33,16 +33,15 @@ class LateralFilter extends Component {
         this.eliminaDuplicadosUbicacion = this.eliminaDuplicadosUbicacion.bind(this);
         this.containsCompany = this.containsCompany.bind(this);
         this.eliminaDuplicadosCompanys = this.eliminaDuplicadosCompanys.bind(this);
+        this.filtrarLocalizacion = this.filtrarLocalizacion.bind(this);
     }
-    filtrarLocalisacion(array, location) {
-        var resultado = [];
-        var i;
-        for (i = 0; i < array.length; i++) {
-            if (array[i].location == location) {
-                resultado.push(array[i]);
-            }
-        }
-        return resultado;
+    filtrarLocalizacion(array, location2) {
+        var updatedList = array;
+        updatedList = updatedList.filter(function (item) {
+            return item.location.toLowerCase().search(
+                location2.toLowerCase()) !== -1;
+        });
+        return updatedList;
     }
     filtrarDescripcion(array, description) {
 
@@ -77,7 +76,7 @@ class LateralFilter extends Component {
     filtrarSeleccion(array, empresa, ubicacion, tipo) {
 
         var resultado = null;
-        if (empresa.length > 0) {
+        if (empresa.length > 0 && empresa != 'All') {
             resultado = this.filtrarEmpresa(array, empresa);
         }
         if (resultado && tipo) {
@@ -93,14 +92,21 @@ class LateralFilter extends Component {
         var empresa = this.state.company;
         var tipo1 = document.getElementById('check1').checked;
         var trabajos = this.state.jobs;
-        ///alert(empresa+'   '+ubicacion);
         if (ubicacion != 'All' || tipo1) {
-
             var resultado = this.filtrarSeleccion(this.state.jobs, empresa, ubicacion, tipo1);
-            this.setState({
-                isfiltrado: true,
-                datosFiltrados: resultado
-            });
+            if (resultado) {
+                this.setState({
+                    isfiltrado: true,
+                    datosFiltrados: resultado
+                });
+            } else {
+                
+                var llocation = this.filtrarLocalizacion(this.state.jobs,ubicacion);
+                this.setState({
+                    isfiltrado: true,
+                    datosFiltrados: llocation
+                });
+            }
         } else {
             this.setState({
                 datosFiltrados: trabajos,
