@@ -4,16 +4,16 @@ export default [
     url: '/'
   },
   {
+    title: 'Search Job',
+    url: '/search'
+  },
+  {
     title: 'About Us',
     url: '/about'
   },
   {
     title: 'Contact Us',
     url: '/contact'
-  },
-  {
-    title: 'Search Job',
-    url: '/search'
   },
   {
     title: 'Register',
