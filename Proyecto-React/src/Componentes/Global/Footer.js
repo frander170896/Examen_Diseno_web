@@ -33,15 +33,6 @@ class Footer extends Component {
               <li>
                 <a href={items[1].url}>{items[1].title}</a>
               </li>
-              <li>
-                <a href={items[2].url}>{items[2].title}</a>
-              </li>
-              <li>
-                <a href={items[3].url}>{items[3].title}</a>
-              </li>
-              <li>
-                <a href={items[4].url}>{items[4].title}</a>
-              </li>
             </ul>
           </div>
 
@@ -79,7 +70,7 @@ class Footer extends Component {
         
 
         <div className="footer-copyright py-3 text-center">
-          © 2018 Copyright
+        Curso diseño web EIF506 | Universidad Nacional de Costa Rica
           </div>
       </div>
     );

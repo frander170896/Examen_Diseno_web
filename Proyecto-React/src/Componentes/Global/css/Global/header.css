@@ -3,7 +3,7 @@
   height: 300px; }
 
 .color_header {
-  background-color: #383CA3;
+  background-color: #AED09E;
   color: #ffffff; }
 
 .color_header a {
@@ -11,13 +11,13 @@
   text-decoration: none; }
 
 .color_header ul li:hover {
-  background-color: #2C2f7C;
+  background-color: #7E6752;
   color: #ffffff;
   border-radius: 5px; }
   .color_header ul li:hover a {
     color: #ffffff; }
 .color_header ul li a.active {
-  background-color: #2C2f7C;
+  background-color: #7E6752;
   color: #ffffff; }
 .color_header ul li a.btn:hover {
   color: #ffffff; }
