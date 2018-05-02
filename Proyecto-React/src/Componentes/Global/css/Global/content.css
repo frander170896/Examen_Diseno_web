@@ -1,6 +1,5 @@
 body {
-  font-family: "Roboto", sans-serif;
-  background: #f4eec0; }
+  font-family: "Roboto", sans-serif; }
 
 .container {
   max-width: 100%; }
@@ -23,13 +22,6 @@ button hover {
 
 .content {
   padding: 0px 15px 0px 15px; }
-
-.color-info {
-  background-color: #61b292;
-  color: #ffffff;
-  padding: 10px 10px;
-  border: 1px solid;
-  box-shadow: 5px 10px #888888; }
 
 @media screen and (max-width: 1200px) {
   .margenes-contenido {

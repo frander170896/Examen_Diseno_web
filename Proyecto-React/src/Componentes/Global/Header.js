@@ -33,13 +33,10 @@ class Header extends Component {
         return (
             <div>
                 <div className="color_header navbar-fixed-top " >
-                    <nav className="navbar navbar-expand-sm navbar-light font-weight-bold margenes-header row justify-content-md-center">
-                       <div className="offset-md-1 col-sm-12 col-md-5">
-                            <a className="navbar-brand" href={items[0].url}>
-                                <img src={logoHeader} width="50" height="30" alt="Logo" />
-                            </a>
-                       </div>
-                       <div className="col-sm-12 offset-md-2 col-md-4">
+                    <nav className="navbar navbar-expand-sm navbar-light  font-weight-bold margenes-header">
+                        <a className="navbar-brand" href={items[0].url}>
+                            <img src={logoHeader} width="30" height="30" alt="Logo" />
+                        </a>
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
@@ -55,8 +52,9 @@ class Header extends Component {
                                 )}
                                 <li className="nav-item" >{this.state.showLogin ? <Login /> : ''}</li>
                             </ul>
+
                         </div>
-                    </div>
+                        
                     </nav>
                 </div>
                 <div className="row mt-0">

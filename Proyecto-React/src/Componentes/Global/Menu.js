@@ -1,11 +1,23 @@
 export default [
   {
-    title: 'Inicio',
+    title: 'Home',
     url: '/'
   },
   {
-    title: 'Acerca de',
-    url: '/Acerca_de'
+    title: 'Search Job',
+    url: '/search'
+  },
+  {
+    title: 'About Us',
+    url: '/about'
+  },
+  {
+    title: 'Contact Us',
+    url: '/contact'
+  },
+  {
+    title: 'Register',
+    url: '/register'
   }
   
 ];
